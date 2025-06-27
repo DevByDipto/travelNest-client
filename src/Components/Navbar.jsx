@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router";
 import { FaUserTie } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { AuthContext } from "../Context/AuthContext";
+import Loding from "./Loding";
 const Navber = () => {
   const { user,logOut } = useContext(AuthContext);
   
@@ -13,7 +14,7 @@ const handleLogOut = () => {
   toast.success('Logout successfull')
 };
 
- 
+
   return (
     <>
   <div className="navbar bg-base-100 shadow-sm">

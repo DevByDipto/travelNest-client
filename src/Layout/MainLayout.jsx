@@ -1,10 +1,18 @@
-import React from 'react'
-import Navber from '../Components/Navbar'
+import React, { useContext } from "react";
+import Navber from "../Components/Navbar";
+import { Outlet } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
+import Loding from "../Components/Loding";
 
 const MainLayout = () => {
-  return <>
-  <Navber></Navber>
-  </>
-}
+  const {user} = useContext(AuthContext)
+  return (
+    <>
+      <Navber></Navber>
+      {user?<Outlet></Outlet> : <Loding></Loding>}
+      
+    </>
+  );
+};
 
-export default MainLayout
+export default MainLayout;
