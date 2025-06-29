@@ -6,11 +6,13 @@ import Register from "../Pages/Authentication/Register";
 import Login from "../Pages/Authentication/Login";
 import Home from "../Pages/Home/Home";
 import AllPackages from "../Pages/allPackages/AllPackages";
+import ErrorPage from "../Components/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children:[
     {  path:'/',
       element: <Home></Home>
