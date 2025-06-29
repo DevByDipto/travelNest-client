@@ -3,9 +3,8 @@ import { AuthContext } from '../Context/AuthContext'
 
 const useAuth = () => {
     const {user} = useContext(AuthContext)
-    console.log(user);
     
-  return user
+  return {user}
 }
 
 export default useAuth

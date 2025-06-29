@@ -7,14 +7,13 @@ import { NavLink } from "react-router";
 const FeaturedPackages = () => {
   const { packages, loading } = usePackages();
   if (loading) return <Loding></Loding>;
-  console.log(packages, loading);
 
   return (
     <div>
       <h2>FeaturedPackages</h2>
       {/* feature cards */}
       <div className="flex">
-        {packages.slice(0, 6).map((singlePackage) => (
+        {packages?.slice(0, 6).map((singlePackage) => (
           <div
             className="card bg-base-100 image-full w-96 shadow-sm"
             key={singlePackage._id}

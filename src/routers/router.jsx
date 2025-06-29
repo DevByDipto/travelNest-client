@@ -7,7 +7,9 @@ import Login from "../Pages/Authentication/Login";
 import Home from "../Pages/Home/Home";
 import AllPackages from "../Pages/allPackages/AllPackages";
 import ErrorPage from "../Components/ErrorPage";
-
+import AddPackage from "../Pages/addPackage/AddPackage";
+import PrivateRoute from '../routers/PrivateRoute'
+import ManageMyPackages from "../Pages/manageMyPackages/ManageMyPackages";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +21,12 @@ const router = createBrowserRouter([
     },
     {  path:'all-packages',
       element: <AllPackages></AllPackages>
+    },
+    {  path:'add-package',
+      element: <PrivateRoute><AddPackage></AddPackage></PrivateRoute>
+    },
+    {  path:'manage-my-packages',
+      element: <PrivateRoute><ManageMyPackages></ManageMyPackages></PrivateRoute>
     },
     {  path:'register',
       element: <Register></Register>

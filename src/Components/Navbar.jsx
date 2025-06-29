@@ -58,8 +58,8 @@ const Navber = () => {
                   <NavLink to="/aboutUs">About Us</NavLink>
                   <NavLink to="/myBookings">My Bookings</NavLink>
                   <NavLink to="/myBookings">My Bookings</NavLink>
-                  <NavLink to="/addPackage">Add Package</NavLink>
-                  <NavLink to="/myAddedPage">Manage My Packages</NavLink>
+                  <NavLink to="/add-package">Add Package</NavLink>
+                  <NavLink to="/manage-my-packages">Manage My Packages</NavLink>
                   <button
                     className="btn border py-1"
                     onClick={handleLogOut}
@@ -118,10 +118,10 @@ const Navber = () => {
                         className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
                       >
                         <li>
-                          <NavLink to="/addPackage">Add Package</NavLink>
+                          <NavLink to="/add-package">Add Package</NavLink>
                         </li>
                         <li>
-                          <NavLink to="/myAddedPage">
+                          <NavLink to="/manage-my-packages">
                             Manage My Packages
                           </NavLink>
                         </li>

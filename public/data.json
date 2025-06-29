@@ -1,0 +1,181 @@
+
+_id
+685f8eb5339edff1d83b187c
+tour_name
+"Dhaka to Cox's Bazar Beach Escape"
+image
+"https://images.unsplash.com/photo-1616330032537-0dbe2f4f1447"
+duration
+"3 Days 2 Nights"
+departure_location
+"Dhaka"
+destination
+"Cox's Bazar"
+price
+8500
+departure_date
+"2025-07-10"
+package_details
+"Relax on the longest sea beach in the world with premium hotels and se…"
+guide_name
+"Fahim Ahmed"
+guide_email
+"fahim@travelnest.com"
+guide_photo
+"https://randomuser.me/api/portraits/men/32.jpg"
+guide_contact_no
+"01711112233"
+bookingCount
+0
+created_at
+2025-06-27T12:00:00.000+00:00
+_id
+685f8eb5339edff1d83b187d
+tour_name
+"Mystic Sajek Valley Adventure"
+image
+"https://images.unsplash.com/photo-1623813033134-92b9e7a4ed36"
+duration
+"2 Days 1 Night"
+departure_location
+"Chittagong"
+destination
+"Sajek Valley"
+price
+6000
+departure_date
+"2025-07-15"
+package_details
+"A breathtaking journey to the clouds in the green hills of Sajek, with…"
+guide_name
+"Shirin Akter"
+guide_email
+"shirin@travelnest.com"
+guide_photo
+"https://randomuser.me/api/portraits/women/45.jpg"
+guide_contact_no
+"01744443322"
+bookingCount
+0
+created_at
+2025-06-27T12:00:00.000+00:00
+_id
+685f8eb5339edff1d83b187e
+tour_name
+"Bandarban Nature Trail"
+image
+"https://images.unsplash.com/photo-1608231387042-66d1773070a3"
+duration
+"4 Days 3 Nights"
+departure_location
+"Dhaka"
+destination
+"Bandarban"
+price
+9500
+departure_date
+"2025-07-20"
+package_details
+"Explore Nafakhum, Nilgiri, and the heart of Bandarban with expert loca…"
+guide_name
+"Tariq Islam"
+guide_email
+"tariq@travelnest.com"
+guide_photo
+"https://randomuser.me/api/portraits/men/64.jpg"
+guide_contact_no
+"01777776666"
+bookingCount
+0
+created_at
+2025-06-27T12:00:00.000+00:00
+_id
+685f8eb5339edff1d83b187f
+tour_name
+"Sylhet Tea Garden Getaway"
+image
+"https://images.unsplash.com/photo-1617191513555-6f33ff46b90a"
+duration
+"3 Days 2 Nights"
+departure_location
+"Dhaka"
+destination
+"Sylhet"
+price
+7500
+departure_date
+"2025-07-18"
+package_details
+"Tea gardens, Jaflong river view, Ratargul swamp forest — the green hea…"
+guide_name
+"Nabila Hossain"
+guide_email
+"nabila@travelnest.com"
+guide_photo
+"https://randomuser.me/api/portraits/women/20.jpg"
+guide_contact_no
+"01755557777"
+bookingCount
+0
+created_at
+2025-06-27T12:00:00.000+00:00
+_id
+685f8eb5339edff1d83b1880
+tour_name
+"Sundarbans Wildlife Exploration"
+image
+"https://images.unsplash.com/photo-1578496489854-dad2c2c6b8e1"
+duration
+"3 Days 2 Nights"
+departure_location
+"Khulna"
+destination
+"Sundarbans"
+price
+10500
+departure_date
+"2025-08-01"
+package_details
+"Cruise through the world's largest mangrove forest and spot Royal Beng…"
+guide_name
+"Rezaul Karim"
+guide_email
+"rezaul@travelnest.com"
+guide_photo
+"https://randomuser.me/api/portraits/men/81.jpg"
+guide_contact_no
+"01799998888"
+bookingCount
+0
+created_at
+2025-06-27T12:00:00.000+00:00
+_id
+685f8eb5339edff1d83b1881
+tour_name
+"Saint Martin’s Island Escape"
+image
+"https://images.unsplash.com/photo-1570032257806-37ec11c8a582"
+duration
+"2 Days 1 Night"
+departure_location
+"Teknaf"
+destination
+"Saint Martin"
+price
+6800
+departure_date
+"2025-07-25"
+package_details
+"White sands, blue water and fresh coconut – enjoy a weekend in Banglad…"
+guide_name
+"Ayesha Sultana"
+guide_email
+"ayesha@travelnest.com"
+guide_photo
+"https://randomuser.me/api/portraits/women/33.jpg"
+guide_contact_no
+"01722221111"
+bookingCount
+0
+created_at
+2025-06-27T12:00:00.000+00:00
