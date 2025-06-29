@@ -2,8 +2,8 @@ import React, { useContext, useRef, useState } from "react";
 import { Navigate, NavLink, useLocation } from "react-router";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
-import { AuthContext } from "../../../Context/AuthContext";
 import GoogleSignIn from "./GoogleSignin";
+import { AuthContext } from "../../Context/AuthContext";
 
 const Login = () => {
   const { login, forgatePass } = useContext(AuthContext);

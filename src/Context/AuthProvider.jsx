@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import { auth } from "../firebase/firebase.init";
@@ -12,12 +11,13 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loding,setLoading] = useState(true)
+  const [loding, setLoading] = useState(true);
   const provider = new GoogleAuthProvider();
-
 
   const registetion = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -48,8 +48,18 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSuscribe = onAuthStateChanged(auth, (user) => {
+      setLoading(false);
       setUser(user);
-      setLoading(false)
+      if (user?.email) {
+        axios
+          .post("http://localhost:3000/jwt", { email: user.email })
+          .then((res) => {
+            if (res.data.token) {
+              localStorage.setItem("token", res.data.token);
+            }
+          })
+          .catch(err=>console.log(err))
+      }
     });
     return () => unSuscribe();
   }, []);
@@ -62,7 +72,7 @@ const AuthProvider = ({ children }) => {
     forgatePass,
     sendingUserInfo,
     signInWithGoogle,
-    loding
+    loding,
   };
 
   return <AuthContext value={userInfo}>{children}</AuthContext>;

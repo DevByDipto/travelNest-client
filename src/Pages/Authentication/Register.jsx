@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { NavLink, useLoaderData, useLocation, useNavigate } from "react-router";
 import toast from "react-hot-toast";
-import { AuthContext } from "../../../Context/AuthContext";
 import GoogleSignIn from "./GoogleSignin";
+import { AuthContext } from "../../Context/AuthContext";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -50,7 +50,6 @@ const Register = () => {
 
   return (
     <div className=" flex items-center justify-center min-h-screen px-6 md:px-0">
-
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-[5vh] pt-3">
         <h1 className="text-3xl font-bold text-center">Register now!</h1>
 
