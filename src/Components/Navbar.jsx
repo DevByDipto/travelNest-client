@@ -56,8 +56,7 @@ const Navber = () => {
                   <NavLink to="/">Home</NavLink>
                   <NavLink to="/all-packages">All Packages</NavLink>
                   <NavLink to="/aboutUs">About Us</NavLink>
-                  <NavLink to="/myBookings">My Bookings</NavLink>
-                  <NavLink to="/myBookings">My Bookings</NavLink>
+                  <NavLink to="/my-bookings">My Bookings</NavLink>
                   <NavLink to="/add-package">Add Package</NavLink>
                   <NavLink to="/manage-my-packages">Manage My Packages</NavLink>
                   <button
@@ -72,7 +71,7 @@ const Navber = () => {
                   <NavLink to="/">Home</NavLink>
                   <NavLink to="/all-packages">All Packages</NavLink>
                   <NavLink to="/aboutUs">About Us</NavLink>
-                  <NavLink to="/myBookings">My Bookings</NavLink>
+                  <NavLink to="/my-bookings">My Bookings</NavLink>
                   <NavLink to="/login">
                     <button className="btn border py-1">Log In </button>
                   </NavLink>
@@ -101,7 +100,7 @@ const Navber = () => {
               <NavLink to="/aboutUs">About Us</NavLink>
               {user ? (
                 <>
-                  <NavLink to="/myBookings">My Bookings</NavLink>
+                  <NavLink to="/my-bookings">My Bookings</NavLink>
 
                   <div>
                     <div className="dropdown dropdown-end">

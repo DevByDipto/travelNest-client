@@ -4,6 +4,7 @@ import useAuthSecure from '../../Hook/useAuthSecure'
 import { useNavigate, useParams } from 'react-router'
 import useSecureFetch from '../../Hook/useSecureFetch'
 import Loding from '../../Components/Loding'
+import Swal from 'sweetalert2'
 
 const AddBooking = () => {
   const {id} = useParams()
@@ -11,19 +12,31 @@ const {user,axiosSecure} = useAuthSecure()
 const {data: selectedPackage,loading,} = useSecureFetch(`/my-packages?email=${user.email}&id=${id}`);
 const navigate = useNavigate()
   if (loading) return <Loding></Loding>;
+console.log(selectedPackage);
 
   const handleBookingTour=(e)=>{
  e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const packageInfo = Object.fromEntries(formData.entries());
+    packageInfo.user_email = user.email
     packageInfo.status = "pending"
 
-    axiosSecure.post('/bookings',packageInfo).then(res=>console.log(res.data))
+    axiosSecure.post(`/bookings?email=${user.email}`,packageInfo).then(res=>{if(res.data.insertedId){
+  Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "Your work has been saved",
+  showConfirmButton: false,
+  timer: 1500
+});
+navigate('all-packages')
+    }})
   }
   return (
     <div>
-       <form onSubmit={handleBookingTour}>
+      
+ <form onSubmit={handleBookingTour}>
       <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
         <legend className="fieldset-legend">Reserve Your Tour - TravelNest</legend>
 
@@ -56,7 +69,7 @@ const navigate = useNavigate()
         <input
           type="text"
           name="guide_name"
-          defaultValue={user.displayName}
+          defaultValue={selectedPackage.guide_name}
           className="input"
           placeholder="Guide name"
           readOnly
@@ -67,7 +80,7 @@ const navigate = useNavigate()
         <input
           type="text"
           name="guide_email"
-          defaultValue={user.email}
+          defaultValue={selectedPackage.guide_email}
           className="input"
           placeholder="Guide email"
           readOnly
@@ -93,7 +106,6 @@ const navigate = useNavigate()
 
       <input className="btn btn-primary" type="submit" value="Book Now" />
     </form>
-
     </div>
   )
 }
