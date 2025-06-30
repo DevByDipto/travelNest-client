@@ -4,6 +4,7 @@ import useAuthSecure from "../../Hook/useAuthSecure";
 import useSecureFetch from "../../Hook/useSecureFetch";
 import useAuth from "../../Hook/useAuth";
 import Loding from "../../Components/Loding";
+import { useLocation, useNavigate, useNavigation } from "react-router";
 
 const ManageMyPackages = () => {
   const { user } = useAuth();
@@ -12,6 +13,11 @@ const ManageMyPackages = () => {
     setData: setMyPackages,
     loading,
   } = useSecureFetch(`/my-packages?email=${user.email}`);
+  const navigate = useLocation()
+  navigate.state=navigate.pathname
+  console.log(navigate);
+  
+  
   if (loading) return <Loding></Loding>;
 
   // const {user,axiosSecure} = useAuthSecure()

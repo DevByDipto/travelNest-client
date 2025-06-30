@@ -1,24 +1,73 @@
-import React from 'react'
+import React, { useState } from "react";
+import Button from "../../Components/common/Button";
+import useAuth from "../../Hook/useAuth";
+import { Navigate, NavLink, useLocation } from "react-router";
 
-const PackageCard = ({singlePackage}) => {
-    
+const PackageCard = ({ singlePackage }) => {
+  const { user } = useAuth();
+  const [openModal, setOpenModal] = useState(false);
+  const { _id, tour_name } = singlePackage;
+  const location = useLocation();
+
+  const handleDetailsModal = () => {
+    if (!user) {
+      return <Navigate to="/login" state={location.pathname}></Navigate>;
+    }
+    setOpenModal(true);
+  };
+
   return (
-   <div className="card bg-base-100 w-96 shadow-sm">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  </figure>
-  <div className="card-body">
-    <h2 className="card-title">{singlePackage.tour_name} </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div className="card-actions justify-end">
-      <div className="badge badge-outline">Fashion</div>
-      <div className="badge badge-outline">Products</div>
-    </div>
-  </div>
-</div>
-  )
-}
+    <div>
+      {/* package card */}
+      <div className="card bg-base-100 w-96 shadow-sm">
+        <figure>
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt="Shoes"
+          />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">{singlePackage.tour_name} </h2>
+          <p>
+            A card component has a figure, a body part, and inside body there
+            are title and actions parts
+          </p>
+          <div className="card-actions justify-end">
+            <div className="badge badge-outline">Fashion</div>
+            <div className="badge badge-outline">Products</div>
+          </div>
+          <button
+            className="btn btn-dash"
+            onClick={() => {
+              handleDetailsModal();
+            }}
+          >
+            Details
+          </button>
+        </div>
+      </div>
+      {/*selected package modal */}
+      {openModal && (
+        <button onClick={document.getElementById(_id).showModal()}></button>
+      )}
 
-export default PackageCard
+      <dialog id={_id} className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">{tour_name}</h3>
+          <p className="py-4">
+            Press ESC key or click the button below to close
+          </p>
+          <NavLink to={`/add-booking/${_id}`}><Button>Book Now</Button></NavLink>
+          <div className="modal-action">
+            <form method="dialog">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </div>
+  );
+};
+
+export default PackageCard;

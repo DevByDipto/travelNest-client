@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import useAuthSecure from '../../Hook/useAuthSecure'
-import { useParams } from 'react-router';
+import { useLocation, useNavigate, useParams } from 'react-router';
 import useAuth from '../../Hook/useAuth';
 import useSecureFetch from '../../Hook/useSecureFetch';
 import Loding from '../../Components/Loding';
 import useAxiosSecure from '../../Hook/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 const UpdateMyPackage  = () => {
     const {id} = useParams()
 const {user,axiosSecure} = useAuthSecure()
-    const {
-    data: myPackage,
-    loading,
-  } = useSecureFetch(`/my-packages?email=${user.email}&id=${id}`);
+const {data: myPackage,loading,} = useSecureFetch(`/my-packages?email=${user.email}&id=${id}`);
+const navigate = useNavigate()
   if (loading) return <Loding></Loding>;
 
 
@@ -27,17 +26,38 @@ const {user,axiosSecure} = useAuthSecure()
 //       .then(res => setMyPackage(res.data))
 //   }, [user?.email, axiosSecure,id]);
 
- const handleUpdatePackage=()=>{
- axiosSecure.put(`/my-packages/${id}?email=${user.email}`)
-       .then(res => console.log(res.data))
+ const handleUpdatePackage=(e)=>{
+     e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const packageInfo = Object.fromEntries(formData.entries());
+
+    packageInfo.price = parseFloat(packageInfo.price);
+    packageInfo.bookingCount = 0;
+    packageInfo.created_at = new Date().toISOString();
+    console.log(packageInfo);
+    
+ axiosSecure.put(`/tour-packages/${id}?email=${user.email}`,packageInfo)
+       .then(res =>{
+        if(res.data.modifiedCount){
+            Swal.fire({
+  position: "top",
+  icon: "success",
+  title: "Package updated successfully",
+  showConfirmButton: false,
+  timer: 1500
+});
+navigate('/manage-my-packages')
+        }
+       })
   }
-  console.log(myPackage);
+//   console.log(myPackage);
   
   return (
     <div>
          <form onSubmit={handleUpdatePackage}>
       <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-        <legend className="fieldset-legend">Add Tour</legend>
+        <legend className="fieldset-legend">Edit Tour Package</legend>
 
         {/* Tour Name */}
         <label className="label">Tour Name</label>
