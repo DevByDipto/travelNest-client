@@ -40,7 +40,7 @@ const MyPackageRow = ({ pkg, index, setMyPackages, myPackages }) => {
       <td>{tour_name}</td>
       <td>Quality Control Specialist</td>
       <td>Blue</td>
-      <td><NavLink to={`/update-my-Package/${_id}`}>Update</NavLink></td>
+      <td><NavLink to={`/update-my-Package/${_id}`}>Eid</NavLink></td>
       <td onClick={handledeletePackage}>Delete</td>
     </tr>
   );
