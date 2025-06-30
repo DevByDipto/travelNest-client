@@ -1,10 +1,8 @@
 import React from "react";
-import useAuth from "../../Hook/useAuth";
-import useAxiosSecure from "../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
+import useAuthSecure from "../../Hook/useAuthSecure";
 const AddPackage = () => {
-  const { user } = useAuth();
-const {axiosSecure} = useAxiosSecure()
+  const {user,axiosSecure} = useAuthSecure()
 
   const handleAddPackage = (e) => {
     e.preventDefault();

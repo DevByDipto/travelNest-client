@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import useAxiosSecure from '../../Hook/useAxiosSecure'
-import useAuth from '../../Hook/useAuth'
 import MyPackageRow from './MyPackageRow'
+import useAuthSecure from '../../Hook/useAuthSecure'
 
 const ManageMyPackages = () => {
-    const {user} = useAuth()
-    const {axiosSecure} = useAxiosSecure()
+    const {user,axiosSecure} = useAuthSecure()
       const [myPackages, setMyPackages] = useState([]);
 
-
     useEffect(() => {
-    if (!user?.email) return;
     axiosSecure
       .get(`/my-packages?email=${user.email}`)
       .then(res => setMyPackages(res.data))
@@ -34,7 +30,7 @@ const ManageMyPackages = () => {
     </thead>
     <tbody>
       {/* row 1 */}
-   {myPackages.map((packageData,index)=><MyPackageRow key={packageData._id} packageData={packageData} index={index}></MyPackageRow>)}
+   {myPackages.map((pkg,index)=><MyPackageRow key={pkg._id} pkg={pkg} index={index} setMyPackages={setMyPackages} myPackages={myPackages}></MyPackageRow>)}
      
      
     </tbody>
