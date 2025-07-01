@@ -9,10 +9,10 @@ import './App.css'
 import AuthProvider from './Context/AuthProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // <StrictMode>
     <AuthProvider>
     <Toaster/>
      <RouterProvider router={router} />
     </AuthProvider>
-  </StrictMode>,
+  // </StrictMode>,
 )

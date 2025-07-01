@@ -30,7 +30,7 @@ console.log(selectedPackage);
   showConfirmButton: false,
   timer: 1500
 });
-navigate('all-packages')
+navigate('/my-bookings')
     }})
   }
   return (

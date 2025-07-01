@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import Button from "../../Components/common/Button";
 import useAuth from "../../Hook/useAuth";
-import { Navigate, NavLink, useLocation } from "react-router";
+import { Navigate, NavLink, useLocation, useNavigate } from "react-router";
 
 const PackageCard = ({ singlePackage }) => {
   const { user } = useAuth();
   const [openModal, setOpenModal] = useState(false);
   const { _id, tour_name } = singlePackage;
   const location = useLocation();
-
+const navigate = useNavigate()
   const handleDetailsModal = () => {
-    if (!user) {
-      return <Navigate to="/login" state={location.pathname}></Navigate>;
-    }
+   if(!user){
+    return navigate('/login', {state:location.pathname})
+   }
+
     setOpenModal(true);
   };
 
