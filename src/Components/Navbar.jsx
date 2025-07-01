@@ -4,6 +4,7 @@ import { FaUserTie } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { AuthContext } from "../Context/AuthContext";
 import Loding from "./Loding";
+import ThemChange from "./ThemeChange";
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -101,7 +102,7 @@ const Navber = () => {
               {user ? (
                 <>
                   <NavLink to="/my-bookings">My Bookings</NavLink>
-
+<ThemChange></ThemChange>
                   <div>
                     <div className="dropdown dropdown-end">
                       <div tabIndex={0} role="button" className=" m-1">

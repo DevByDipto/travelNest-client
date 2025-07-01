@@ -20,6 +20,7 @@ console.log(selectedPackage);
     const formData = new FormData(form);
     const packageInfo = Object.fromEntries(formData.entries());
     packageInfo.user_email = user.email
+    packageInfo.package_id = id
     packageInfo.status = "pending"
 
     axiosSecure.post(`/bookings?email=${user.email}`,packageInfo).then(res=>{if(res.data.insertedId){

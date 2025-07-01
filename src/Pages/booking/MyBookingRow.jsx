@@ -4,7 +4,7 @@ import useAuthSecure from '../../Hook/useAuthSecure'
 import toast from 'react-hot-toast'
 
 const MyBookingRow = ({bookedToure,index}) => {
-    const {_id} = bookedToure
+    const {_id,tour_name} = bookedToure
 const [bookingStatus,setbookingStatus] =useState(bookedToure.status)
 const {user,axiosSecure} = useAuthSecure()
 const handleConfirmBooking=()=>{
@@ -20,7 +20,7 @@ const handleConfirmBooking=()=>{
   return (
      <tr>
         <th>{index+1}</th>
-        <td>Cy Ganderton</td>
+        <td>{tour_name}</td>
         <td>Quality Control Specialist</td>
         <td>Blue</td>
         <td onClick={handleConfirmBooking}>{

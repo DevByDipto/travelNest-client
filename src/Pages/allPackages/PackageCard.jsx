@@ -6,7 +6,7 @@ import { Navigate, NavLink, useLocation, useNavigate } from "react-router";
 const PackageCard = ({ singlePackage }) => {
   const { user } = useAuth();
   const [openModal, setOpenModal] = useState(false);
-  const { _id, tour_name } = singlePackage;
+  const { _id, tour_name,bookingCount,image } = singlePackage;
   const location = useLocation();
 const navigate = useNavigate()
   const handleDetailsModal = () => {
@@ -23,8 +23,9 @@ const navigate = useNavigate()
       <div className="card bg-base-100 w-96 shadow-sm">
         <figure>
           <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
+            src={image}
+            alt="cox's"
+            className="w-full h-[200px]"
           />
         </figure>
         <div className="card-body">
@@ -36,6 +37,7 @@ const navigate = useNavigate()
           <div className="card-actions justify-end">
             <div className="badge badge-outline">Fashion</div>
             <div className="badge badge-outline">Products</div>
+            <div className="badge badge-outline">booked:{bookingCount}</div>
           </div>
           <button
             className="btn btn-dash"

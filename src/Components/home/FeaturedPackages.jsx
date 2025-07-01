@@ -19,7 +19,8 @@ const FeaturedPackages = () => {
             key={singlePackage._id}
           >
             <figure>
-              <img src={singlePackage.image} alt="Shoes" />
+              <img src={singlePackage.image} alt="Shoes"  className="w-[100px]"/>
+              
             </figure>
             <div className="card-body">
               <h2 className="card-title">{singlePackage.tour_name}</h2>
