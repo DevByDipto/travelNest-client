@@ -1,8 +1,11 @@
 import React from "react";
 import Swal from "sweetalert2";
 import useAuthSecure from "../../Hook/useAuthSecure";
+import Lottie from "lottie-react";
+import addPackageAnimation from "../../assets/addPackageAnimation.json";
+import Button from "../../Components/common/Button";
 const AddPackage = () => {
-  const {user,axiosSecure} = useAuthSecure()
+  const { user, axiosSecure } = useAuthSecure();
 
   const handleAddPackage = (e) => {
     e.preventDefault();
@@ -14,45 +17,63 @@ const AddPackage = () => {
     packageInfo.bookingCount = 0;
     packageInfo.created_at = new Date().toISOString();
 
-    axiosSecure.post(`/packages?email=${user.email}`,packageInfo).then(res=>{
-      if(res.data.insertedId){
-        Swal.fire({
-  position: "top-end",
-  icon: "success",
-  title: "Your work has been saved",
-  showConfirmButton: false,
-  timer: 1500
-});
-      }
-    })
+    axiosSecure
+      .post(`/packages?email=${user.email}`, packageInfo)
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
     console.log(packageInfo);
   };
 
   return (
-    <form onSubmit={handleAddPackage}>
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-        <legend className="fieldset-legend">Add Tour</legend>
+    <div className="bg-gradient-to-r from-amber-500 to-amber-400 pb-32 dark:bg-[#1D232A]">
+      <div className="container">
+        <div className="flex items-center justify-center py-10">
+        <h2 className="text-4xl font-bold rounded-2xl py-3 w-2xl text-center ">
+          Add Package
+        </h2>
+        </div>
+        <div className="flex flex-col-reverse lg:flex-row">
+          <form className="form lg:w-[60%]" onSubmit={handleAddPackage}>
+            <fieldset className="fieldset border-none shadow-2xl bg-white dark:bg-[#1D232A] rounded-box border p-4 grid grid-cols-2">
+              {/* Tour Name */}
+              <div>
+                <label className="label dark:text-[#ECF9FF] text-black ">
+                  Tour Name
+                </label>
+                <input
+                  type="text"
+                  name="tour_name"
+                  className="input"
+                  placeholder="Enter tour name"
+                />
+              </div>
 
-        {/* Tour Name */}
-        <label className="label">Tour Name</label>
-        <input
-          type="text"
-          name="tour_name"
-          className="input"
-          placeholder="Enter tour name"
-        />
+              {/* image */}
+              <div>
+                <label className="label dark:text-[#ECF9FF] text-black">Image URL</label>
+                <input
+                  type="text"
+                  name="image"
+                  className="input"
+                  placeholder="Enter tour image URL"
+                />
+              </div>
 
-        {/* image */}
-        <label className="label">Image URL</label>
-        <input
-          type="text"
-          name="image"
-          className="input"
-          placeholder="Enter tour image URL"
-        />
 
-        {/* Duration */}
-        <label className="label">Duration</label>
+  {/* Duration */}
+  <div>
+
+ 
+        <label className="label dark:text-[#ECF9FF] text-black">Duration</label>
         <select defaultValue="" name="duration" className="select">
           <option disabled value="">
             Select Duration
@@ -61,51 +82,61 @@ const AddPackage = () => {
           <option>2 Days 1 Nights</option>
           <option>1 Day</option>
         </select>
-
+ </div>
         {/* departure_location */}
-        <label className="label">Departure Location</label>
+        <div>
+        <label className="label dark:text-[#ECF9FF] text-black">Departure Location</label>
         <input
           type="text"
           name="departure_location"
           className="input"
           placeholder="Departure location"
         />
-
+</div>
         {/* destination */}
-        <label className="label">Destination Location</label>
+<div>
+        <label className="label dark:text-[#ECF9FF] text-black">Destination Location</label>
         <input
           type="text"
           name="destination"
           className="input"
           placeholder="Destination location"
         />
-
+</div>
         {/* price */}
-        <label className="label">Tour Package Price</label>
+        <div> 
+        <label className="label dark:text-[#ECF9FF] text-black">Tour Package Price</label>
         <input
           type="number"
           name="price"
           className="input"
           placeholder="Enter price in BDT"
         />
-
-        {/* departure_date */}
-        <label className="label">Departure Date</label>
+</div>
+                {/* departure_date */}
+                <div>
+        <label className="label dark:text-[#ECF9FF] text-black">Departure Date</label>
         <label className="input">
           <input type="date" name="departure_date" />
         </label>
-
+ </div>
         {/* package_details */}
-        <label className="label">Package Details</label>
+        <div>
+
+       
+        <label className="label dark:text-[#ECF9FF] text-black">Package Details</label>
         <input
           type="text"
           name="package_details"
           className="input"
           placeholder="Write details about the tour"
         />
-
+ </div>
         {/* guide_name */}
-        <label className="label">Guide Name</label>
+        <div>
+
+      
+        <label className="label dark:text-[#ECF9FF] text-black">Guide Name</label>
         <input
           type="text"
           name="guide_name"
@@ -114,9 +145,12 @@ const AddPackage = () => {
           placeholder="Guide name"
           readOnly
         />
-
+  </div>
         {/* guide_email */}
-        <label className="label">Guide Email</label>
+        <div>
+
+       
+        <label className="label dark:text-[#ECF9FF] text-black">Guide Email</label>
         <input
           type="text"
           name="guide_email"
@@ -125,9 +159,12 @@ const AddPackage = () => {
           placeholder="Guide email"
           readOnly
         />
-
+ </div>
         {/* guide_photo */}
-        <label className="label">Guide Photo</label>
+        <div>
+
+       
+        <label className="label dark:text-[#ECF9FF] text-black">Guide Photo</label>
         <input
           type="text"
           name="guide_photo"
@@ -136,20 +173,48 @@ const AddPackage = () => {
           placeholder="Guide photo URL"
           readOnly
         />
-
+ </div>
         {/* guide_contact_no */}
-        <label className="label">Guide Contact No</label>
+        <div>
+
+ 
+        <label className="label dark:text-[#ECF9FF] text-black">Guide Contact No</label>
         <input
           type="text"
           name="guide_contact_no"
           className="input"
           placeholder="Contact number"
         />
-      </fieldset>
-
-      <input className="btn btn-primary" type="submit" value="submit" />
-    </form>
+               </div>
+<Button className='col-span-2 mt-3'> <input className="" type="submit" value="submit" /> </Button>
+            </fieldset>
+           
+          </form>
+          {/* lootifile */}
+          <div className="lg:w-[40%]">
+            <Lottie animationData={addPackageAnimation} loop={true} />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
 export default AddPackage;
+
+
+
+
+
+   
+       
+
+     
+
+      
+
+        
+
+       
+
+     

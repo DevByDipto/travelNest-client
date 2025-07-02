@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { use , useEffect, useState } from "react";
 import MyPackageRow from "./MyPackageRow";
 import useAuthSecure from "../../Hook/useAuthSecure";
 import useSecureFetch from "../../Hook/useSecureFetch";
@@ -20,28 +20,25 @@ const ManageMyPackages = () => {
   
   if (loading) return <Loding></Loding>;
 
-  // const {user,axiosSecure} = useAuthSecure()
-  // const [myPackages, setMyPackages] = useState([]);
-
-  //   useEffect(() => {
-  //   axiosSecure
-  //     .get(`/my-packages?email=${user.email}`)
-  //     .then(res => setMyPackages(res.data))
-  // }, [user?.email, axiosSecure]);
+ 
 
   return (
-    <div>
-      <h2>ManageMyPackages</h2>
+
+    
+    <div className="container pb-32">
+      <h2 className="text-4xl font-bold rounded-full inline-block py-10">Manage My Packages</h2>
 
       <div className="overflow-x-auto">
-        <table className="table">
+        <table className="table border border-gray-100 dark:border-[#242a31]">
           {/* head */}
           <thead>
-            <tr>
+            <tr className='bg-gray-400 dark:bg-[#242a31]'>
               <th></th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Price </th>
+              <th>Departure Location</th>
+              <th>Destination</th>
+              <th>Booking Count</th>
               <th>Update</th>
               <th>Delete</th>
             </tr>

@@ -3,6 +3,7 @@ import { NavLink, useLoaderData, useLocation, useNavigate } from "react-router";
 import toast from "react-hot-toast";
 import GoogleSignIn from "./GoogleSignin";
 import { AuthContext } from "../../Context/AuthContext";
+import Button from "../../Components/common/Button";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -92,10 +93,10 @@ const Register = () => {
               placeholder="Password"
             />
             <p>{error}</p>
-            <button type="submit" className="btn btn-primary mt-4 w-full">
+            {/* <button type="submit" className="btn btn-primary mt-4 w-full">
             Register Now
-            </button>
-
+            </button> */}
+<Button className='w-full mt-4' type='submit'>Register Now</Button>
             <GoogleSignIn></GoogleSignIn>
             <p className="mt-2">
               Already have an account ?

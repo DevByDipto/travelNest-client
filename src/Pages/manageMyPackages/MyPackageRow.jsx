@@ -2,9 +2,27 @@ import React from "react";
 import Swal from "sweetalert2";
 import { NavLink } from "react-router";
 import useAuthSecure from "../../Hook/useAuthSecure";
+import { MdDeleteForever, MdEditSquare } from "react-icons/md";
+import { RiEdit2Fill } from "react-icons/ri";
 
 const MyPackageRow = ({ pkg, index, setMyPackages, myPackages }) => {
-  const { _id, tour_name } = pkg;
+   const isEven = index % 2 === 0;
+   const {
+    _id,
+    tour_name,
+    bookingCount,
+    image,
+    guide_photo,
+    guide_name,
+    guide_contact_no,
+    price,
+    departure_date,
+    duration,
+    package_details,
+    departure_location,
+    destination,
+  } = pkg;
+ 
     const {user,axiosSecure} = useAuthSecure()
 
   const handledeletePackage = () => {
@@ -30,18 +48,20 @@ const MyPackageRow = ({ pkg, index, setMyPackages, myPackages }) => {
               timer: 1500,
             });
           }
-        });
+        })
       }
     });
   };
   return (
-    <tr>
+    <tr className={`${!isEven && "bg-gray-200 dark:bg-[#242a31]"}`}>
       <th>{index + 1}</th>
       <td>{tour_name}</td>
-      <td>Quality Control Specialist</td>
-      <td>Blue</td>
-      <td><NavLink to={`/update-my-Package/${_id}`}>Eidt</NavLink></td>
-      <td onClick={handledeletePackage}>Delete</td>
+      <td>{price}</td>
+      <td>{departure_location}</td>
+      <td>{destination}</td>
+      <td>{bookingCount}</td>
+      <td className="text-blue-500 hover:text-blue-600"><NavLink to={`/update-my-Package/${_id}`}><RiEdit2Fill size={25} /></NavLink></td>
+      <td className="text-red-500 hover:text-red-600" onClick={handledeletePackage}><MdDeleteForever size={25} /></td>
     </tr>
   );
 };

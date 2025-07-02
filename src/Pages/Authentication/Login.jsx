@@ -4,7 +4,9 @@ import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
 import GoogleSignIn from "./GoogleSignin";
 import { AuthContext } from "../../Context/AuthContext";
-
+import Button from "../../Components/common/Button";
+import Lottie from "lottie-react";
+import logingAnimation from '../../assets/loginAnimation2.json'
 const Login = () => {
   const { login, forgatePass } = useContext(AuthContext);
   const emailRef = useRef();
@@ -43,10 +45,9 @@ const Login = () => {
   };
 
   return (
-    <div className=" flex items-center justify-center min-h-screen px-6 md:px-0">
+    <div className=" flex flex-col-reverse lg:flex-row items-center justify-center min-h-screen px-6 md:px-0 gap-10 bg-gradient-to-r from-amber-500 to-amber-400">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
         <h1 className="text-3xl font-bold text-center pt-3">Login now!</h1>
-
         <div className="card-body">
           <form className="form" onSubmit={handleLogin}>
             {/* email */}
@@ -68,14 +69,12 @@ const Login = () => {
               placeholder="Password"
             />
 
-            <div>
-              <a target="_blank"  onClick={handleForgatePass} className="link link-hover">
+            <div className="mt-1">
+              <a target="_blank"  onClick={handleForgatePass} className="link link-hover ">
                 Forgot password?
               </a>
             </div>
-            <button type="submit" className="btn btn-neutral mt-4 w-full">
-              Login
-            </button>
+         <Button className="w-full" type="submit">Login</Button>
             <GoogleSignIn></GoogleSignIn>
             <p className="mt-2">
               Dont’t Have An Account ?
@@ -88,7 +87,9 @@ const Login = () => {
             </p>
           </form>
         </div>
-      </div>
+             </div>
+              {/* lotti animation */}
+        <Lottie animationData={logingAnimation} loop={true} />
     </div>
   );
 };

@@ -10,18 +10,26 @@ if(loading) return <Loding></Loding>
 console.log(myBookedTours);
 
   return (
-    <div>
-      <h2>MyBookings</h2>
+    <div className='container pb-32'>
+      <div className=' pt-16 pb-10  '>
+      <h2  className="text-4xl font-bold rounded-full inline-block">My Bookings</h2>
+       <p className="text-lg font-medium text-gray-700 dark:text-[#ECF9FF] pt-5">View all your tour bookings in one place. You can track booking status, check package details,<br /> and manage your upcoming trips from here.</p>
+   </div>
       <div className="overflow-x-auto">
-  <table className="table">
+  <table className="table border border-gray-100 dark:border-[#242a31]">
     {/* head */}
     <thead>
-      <tr>
+      <tr className='bg-gray-400 dark:bg-[#242a31]'>
         <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
-      </tr>
+        <th>Package Name</th>
+        <th>Guide Name</th>
+        <th>Guide Contact</th>
+        <th>Departure Date</th>
+        <th>Departure location</th>
+        <th>Destination</th>
+        <th>Special Note</th>
+        <th>Status</th>
+             </tr>
     </thead>
     <tbody>
       {/* row 1 */}

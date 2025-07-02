@@ -17,7 +17,7 @@ const Navber = () => {
 
   return (
     <nav className="bg-gray-100 dark:bg-[#1D232A] border-b border-gray-300">
-      <div className="navbar  container">
+      <div className="navbar px-0 container  ">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -41,18 +41,21 @@ const Navber = () => {
                 />{" "}
               </svg>
             </div>
+               {/* for mobile */}
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow space-y-2"
             >
+           
               {user ? (
                 <>
-                  <div>
+                  <div className="flex items-center gap-5">
                     <img
                       className="h-10 w-10 rounded-full"
                       src={user?.photoURL}
                       alt=""
                     />
+                    <ThemChange></ThemChange>
                   </div>
                   <NavLink to="/">Home</NavLink>
                   <NavLink to="/all-packages">All Packages</NavLink>
@@ -73,6 +76,7 @@ const Navber = () => {
                   <NavLink to="/all-packages">All Packages</NavLink>
                   <NavLink to="/aboutUs">About Us</NavLink>
                   <NavLink to="/my-bookings">My Bookings</NavLink>
+                  <ThemChange></ThemChange>
                   <NavLink to="/login">
                     <button className="btn border py-1">Log In </button>
                   </NavLink>
@@ -94,6 +98,7 @@ const Navber = () => {
           </div>
         </div>
         <div className="navbar-end hidden lg:flex">
+          {/* for leptop */}
           <ul className="menu menu-horizontal px-1">
             <div className="flex gap-5 items-center font-medium text-lg ">
               <NavLink to="/">Home</NavLink>
@@ -139,6 +144,7 @@ const Navber = () => {
                 </>
               ) : (
                 <div className="flex gap-5">
+                  <ThemChange></ThemChange>
                   <NavLink to="/login">
                     <button className="btn btn-primary px-6">Log In </button>
                   </NavLink>
