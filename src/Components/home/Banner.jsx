@@ -4,15 +4,16 @@ import { NavLink } from 'react-router'
 
 const Banner = () => {
   return (
+    
   <div
   className="hero min-h-screen"
   style={{
     backgroundImage:
-      "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+      "url(https://i.ibb.co/24VKMBB/download-8.jpg)",
   }}
 >
-  <div className="hero-overlay"></div>
-  <div className="hero-content text-neutral-content text-center">
+
+  <div className="text-white text-center">
     <div className="max-w-md">
       <h1 className="mb-5 text-5xl font-bold">Explore the World with TravelNest</h1>
       <p className="mb-5">
@@ -23,7 +24,7 @@ comfortable plans, and unforgettable memories.
       </p>
       <NavLink to='/all-packages'>
 
-      <Button>Explore All Packages</Button>
+      <Button className='border-none shadow-none'>Explore All Packages</Button>
       </NavLink>
     </div>
   </div>

@@ -4,6 +4,7 @@ import PackageCard from './PackageCard';
 import Loading from '../../Components/Loding'
 import { IoSearchSharp } from 'react-icons/io5';
 import axios from 'axios';
+import Button from '../../Components/common/Button';
 const AllPackages = () => {
   const {packages,setPackages,loading} = usePackages()
   console.log(packages);
@@ -20,18 +21,23 @@ const AllPackages = () => {
     axios.get(`http://localhost:3000/packages/search?query=${searchQuery}`).then(res => setPackages(res.data))
   }
   return (
-    <div>
-      <h2>AllPackages</h2>
-      <form className='my-5 flex' onSubmit ={handleSearch} >
-        <input type="text" name='search' placeholder="Type here" className="input"/>
+    <div className="bg-gray-100 pb-32 dark:bg-[#1D232A]">
+      <div className='container'>
+      <div className='text-center pt-16 pb-4'>
+      <h2 className="text-4xl font-bold">AllPackages</h2>
+      <p className="text-lg font-medium text-gray-700 pt-5">Discover top-rated tour packages tailored for every traveler—adventure, <br />relaxation, and more.  Book easily and travel with confidence!</p>
+      </div>
+      <form className='mt-5 mb-15 flex gap-1 justify-center items-center' onSubmit ={handleSearch} >
+        <input type="text" name='search' placeholder="searce by package name" className="input"/>
      
-      <input type="submit" className='btn btn-primary' value='search' />
+      <Button><input type="submit" className='' value='search' /></Button>
       </form>
 
-      <div className='grid grid-cols-3'>
+      <div className='grid grid-cols-3 gap-5'>
 {packages?.map((singlePackage)=><PackageCard key={singlePackage._id} singlePackage={singlePackage}></PackageCard>)}
       </div>
     </div>
+      </div>
   )
 }
 

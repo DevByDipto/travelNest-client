@@ -8,7 +8,7 @@ import ThemChange from "./ThemeChange";
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // console.log(user?.photoURL);
   const handleLogOut = () => {
     logOut();
@@ -16,8 +16,8 @@ const Navber = () => {
   };
 
   return (
-    <>
-      <div className="navbar bg-base-100 shadow-sm">
+    <nav className="bg-gray-100 dark:bg-[#1D232A] border-b border-gray-300">
+      <div className="navbar  container">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -88,7 +88,7 @@ const Navber = () => {
 
           <div className="flex gap-3 items-center">
             <p className="text-primary text-2xl md:text-4xl">🌍</p>
-            <h2 className="text-2xl md:text-4xl font-medium text-primary">
+            <h2 className="text-2xl md:text-4xl font-medium text-amber-500">
               Travel<span className="text-black">Nest</span>
             </h2>
           </div>
@@ -153,7 +153,7 @@ const Navber = () => {
           </ul>
         </div>
       </div>
-    </>
+    </nav>
   );
 };
 

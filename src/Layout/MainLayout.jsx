@@ -8,12 +8,11 @@ import Footer from "../Components/Footer";
 const MainLayout = () => {
   const {user} = useContext(AuthContext)
   return (
-    <>
+    <div>
       <Navber></Navber>
-      {/* {user?<Outlet></Outlet> : <Loding></Loding>} */}
       <Outlet></Outlet>
       <Footer></Footer>
-    </>
+    </div>
   );
 };
 

@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import "tailwindcss";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @plugin "daisyui";
 
 .active{
-    border-bottom: 2px solid burlywood;
+    border-bottom: 2px solid rgb(227, 154, 58);
+}
+
+.container{
+    width: 1152px;
+    margin: auto;
+}
+
+body{
+    font-family: "Nunito", sans-serif;
 }
