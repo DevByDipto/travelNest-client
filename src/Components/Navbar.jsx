@@ -59,7 +59,7 @@ const Navber = () => {
                   </div>
                   <NavLink to="/">Home</NavLink>
                   <NavLink to="/all-packages">All Packages</NavLink>
-                  <NavLink to="/aboutUs">About Us</NavLink>
+                  <NavLink to="/about-us">About Us</NavLink>
                   <NavLink to="/my-bookings">My Bookings</NavLink>
                   <NavLink to="/add-package">Add Package</NavLink>
                   <NavLink to="/manage-my-packages">Manage My Packages</NavLink>
@@ -71,7 +71,7 @@ const Navber = () => {
                 <>
                   <NavLink to="/">Home</NavLink>
                   <NavLink to="/all-packages">All Packages</NavLink>
-                  <NavLink to="/aboutUs">About Us</NavLink>
+                  <NavLink to="/about-us">About Us</NavLink>
                   <NavLink to="/my-bookings">My Bookings</NavLink>
                   <ThemChange></ThemChange>
                   <NavLink to="/login">
@@ -98,7 +98,7 @@ const Navber = () => {
             <div className="flex gap-5 items-center font-medium text-lg ">
               <NavLink to="/">Home</NavLink>
               <NavLink to="/all-packages">All Packages</NavLink>
-              <NavLink to="/aboutUs">About Us</NavLink>
+              <NavLink to="/about-us">About Us</NavLink>
               {user ? (
                 <>
                   <NavLink to="/my-bookings">My Bookings</NavLink>
@@ -137,12 +137,10 @@ const Navber = () => {
               ) : (
                 <div className="flex gap-5">
                   <NavLink to="/login">
-                    <button className="btn btn-primary px-6">Log In </button>
+                    <Button className="px-6">Log In </Button>
                   </NavLink>
                   <NavLink to="/register">
-                    <button className="btn btn-primary px-6">
-                      Registration
-                    </button>
+                    <Button className="px-6">Registration</Button>
                   </NavLink>
                 </div>
               )}

@@ -11,7 +11,7 @@ const usePackages = () => {
 
   useEffect(() => {
         axios
-      .get('http://localhost:3000/packages')
+      .get(`${import.meta.env.VITE_API_BASE_URL}/packages`)
       .then((res) => setPackages(res.data))
       .catch((err) => toast.error(err.message))
       .finally(() => setLoding(false));

@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import toast from 'react-hot-toast'
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:3000'
+    baseURL: `${import.meta.env.VITE_API_BASE_URL}`
 })
 const useAxiosSecure = () => {
 const token = localStorage.getItem('token')

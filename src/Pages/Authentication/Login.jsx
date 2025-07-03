@@ -26,6 +26,8 @@ const Login = () => {
       .then(() => {
       toast.success('Login successful')
         navigate(location.state ? location.state : "/");
+                    console.log("relod is worak");
+        window.location.reload()
       })
       .catch((err) => {
        toast.error(err.message)
@@ -38,6 +40,7 @@ const Login = () => {
       .then(() => {
         toast.success("please check you email")
         window.location.href = "https://mail.google.com";
+
       })
       .catch((err) => {
         toast.error(err.message)

@@ -19,7 +19,7 @@ const AllPackages = () => {
     const searchQuery = e.target.search.value
 // console.log(searchQuery);
 
-    axios.get(`http://localhost:3000/packages/search?query=${searchQuery}`).then(res => setPackages(res.data)).catch(err=> toast.error(err.message))
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/packages/search?query=${searchQuery}`).then(res => setPackages(res.data)).catch(err=> toast.error(err.message))
   }
   return (
     <div className="bg-gray-100 pb-32 dark:bg-[#1D232A]">

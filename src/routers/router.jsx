@@ -13,6 +13,7 @@ import ManageMyPackages from "../Pages/manageMyPackages/ManageMyPackages";
 import UpdateMyPackage from "../Pages/manageMyPackages/UpdateMyPackage ";
 import AddBooking from "../Pages/booking/AddBooking";
 import MyBookings from "../Pages/booking/MyBookings";
+import About from "../Pages/about/About";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,9 @@ const router = createBrowserRouter([
     },
     {  path:'all-packages',
       element: <AllPackages></AllPackages>
+    },
+    {  path:'about-us',
+      element: <About></About>
     },
     {  path:'add-package',
       element: <PrivateRoute><AddPackage></AddPackage></PrivateRoute>
