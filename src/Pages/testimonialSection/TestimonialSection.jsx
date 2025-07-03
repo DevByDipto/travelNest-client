@@ -56,15 +56,15 @@ function TestimonialSection() {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-[#1D232A]">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">What they say!</h2>
-        <p className="text-gray-600 mb-12">Hear from our happy travelers about their amazing experiences with TravelNest.</p>
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-[#ECF9FF] mb-4">What they say!</h2>
+        <p className="text-gray-600 dark:text-[#ECF9FF] mb-12">Hear from our happy travelers about their amazing experiences with TravelNest.</p>
 
         <div className="relative max-w-3xl mx-auto">
           {/* Testimonial Content */}
-          <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+          <div className="bg-white dark:bg-[#1D232A] p-8 rounded-xl shadow-lg border border-gray-200">
+            <p className="text-lg text-gray-700 dark:text-[#ECF9FF] mb-8 leading-relaxed">
               {testimonials[currentTestimonialIndex].text}
             </p>
             <div className="flex flex-col items-center">
@@ -74,7 +74,7 @@ function TestimonialSection() {
                 className="w-20 h-20 rounded-full object-cover mb-4 border-2 border-amber-500"
                 onError={(e) => { e.target.onerror = null; e.target.src = `https://placehold.co/80x80/E0F2F7/000000?text=Avatar`; }}
               />
-              <h4 className="text-xl font-semibold text-gray-900">{testimonials[currentTestimonialIndex].author}</h4>
+              <h4 className="text-xl font-semibold text-gray-900 dark:text-[#ECF9FF]">{testimonials[currentTestimonialIndex].author}</h4>
               <p className="text-amber-600 text-sm">{testimonials[currentTestimonialIndex].title}</p>
             </div>
           </div>
@@ -83,9 +83,9 @@ function TestimonialSection() {
           <div className="flex justify-center items-center mt-8 space-x-4">
             <button
               onClick={prevTestimonial}
-              className="p-3 rounded-full bg-gray-200 hover:bg-gray-300 transition duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="p-3 rounded-full bg-gray-200 dark:bg-[#1D232A] hover:bg-gray-300 transition duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
             >
-              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-6 h-6 text-gray-600 dark:text-[#ECF9FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
               </svg>
             </button>
@@ -96,16 +96,16 @@ function TestimonialSection() {
                   key={index}
                   onClick={() => setCurrentTestimonialIndex(index)}
                   className={`w-3 h-3 rounded-full ${
-                    index === currentTestimonialIndex ? 'bg-amber-600' : 'bg-gray-300 hover:bg-gray-400'
+                    index === currentTestimonialIndex ? 'bg-amber-600' : 'bg-gray-300  hover:bg-gray-400 '
                   } transition duration-200`}
                 ></button>
               ))}
             </div>
             <button
               onClick={nextTestimonial}
-              className="p-3 rounded-full bg-gray-200 hover:bg-gray-300 transition duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="p-3 rounded-full bg-gray-200 dark:bg-[#1D232A] hover:bg-gray-300 hover:dark:bg-[#1D232A] transition duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
             >
-              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-6 h-6 text-gray-600 dark:text-[#ECF9FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </button>

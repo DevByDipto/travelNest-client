@@ -65,20 +65,20 @@ function TourTypesSection() {
   ];
 
   return (
-    <section className="bg-gray-100 py-32">
+    <section className="bg-gray-100 dark:bg-[#1D232A] py-32">
         <div className='container'>
 
       
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">Types of tours</h2>
-        <p className="text-gray-600 mb-12">Explore the tours chosen and recommended by a multitude of travelers.</p>
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-[#ECF9FF] mb-4">Types of tours</h2>
+        <p className="text-gray-600 dark:text-[#ECF9FF] mb-12">Explore the tours chosen and recommended by a multitude of travelers.</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {tourTypes.map(type => (
-            <div key={type.id} className="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+            <div key={type.id} className="flex flex-col items-center p-6 dark:bg-[#1D232A] bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
               {type.icon}
-              <h3 className="text-xl font-semibold text-gray-900 mb-1">{type.name}</h3>
-              <p className="text-gray-600 text-sm">{type.toursCount} tours</p>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-[#ECF9FF] mb-1">{type.name}</h3>
+              <p className="text-gray-600 dark:text-[#ECF9FF] text-sm">{type.toursCount} tours</p>
             </div>
           ))}
         </div>

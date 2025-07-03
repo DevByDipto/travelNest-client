@@ -28,7 +28,7 @@ const WhyChooseUs = () => {
   return (
     <div className="py-32 px-4 text-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-4">Why choose <span className="text-amber-500">TravelNest</span></h2>
-      <p className="text-gray-500 max-w-xl mx-auto mb-12">
+      <p className="text-gray-500 dark:text-[#ECF9FF] max-w-xl mx-auto mb-12">
         Discover the difference with our expert team and top-tier travel experiences.
       </p>
 
@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
               {item.icon}
             </div>
             <h3 className="font-semibold text-lg">{item.title}</h3>
-            <p className="text-gray-600 text-sm mt-2">{item.description}</p>
+            <p className="text-gray-600 dark:text-[#ECF9FF] text-sm mt-2">{item.description}</p>
           </div>
         ))}
       </div>

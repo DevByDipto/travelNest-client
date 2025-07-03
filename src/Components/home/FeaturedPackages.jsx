@@ -18,7 +18,7 @@ const FeaturedPackages = () => {
     <div className="py-32 bg-gray-100 dark:bg-[#1D232A]">
       <div className="container">
         <h2 className="text-4xl font-bold">Featured Packages</h2>
-        <p className="text-lg font-medium text-gray-700 my-5">
+        <p className="text-lg font-medium text-gray-700 dark:text-[#ECF9FF] my-5">
           Take a look at our featured travel packages, chosen for their
           popularity, affordability, and <br />
           unforgettable experiences. Whether you’re seeking nature, culture, or
