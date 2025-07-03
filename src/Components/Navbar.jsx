@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { AuthContext } from "../Context/AuthContext";
 import Loding from "./Loding";
 import ThemChange from "./ThemeChange";
+import Button from "./common/Button";
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -41,12 +42,11 @@ const Navber = () => {
                 />{" "}
               </svg>
             </div>
-               {/* for mobile */}
+            {/* for mobile */}
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow space-y-2"
             >
-           
               {user ? (
                 <>
                   <div className="flex items-center gap-5">
@@ -63,10 +63,7 @@ const Navber = () => {
                   <NavLink to="/my-bookings">My Bookings</NavLink>
                   <NavLink to="/add-package">Add Package</NavLink>
                   <NavLink to="/manage-my-packages">Manage My Packages</NavLink>
-                  <button
-                    className="btn border py-1"
-                    onClick={handleLogOut}
-                  >
+                  <button className="btn border py-1" onClick={handleLogOut}>
                     Log Out
                   </button>
                 </>
@@ -81,9 +78,7 @@ const Navber = () => {
                     <button className="btn border py-1">Log In </button>
                   </NavLink>
                   <NavLink to="/register">
-                    <button className="btn border py-1">
-                      Registration
-                    </button>
+                    <button className="btn border py-1">Registration</button>
                   </NavLink>
                 </>
               )}
@@ -107,7 +102,7 @@ const Navber = () => {
               {user ? (
                 <>
                   <NavLink to="/my-bookings">My Bookings</NavLink>
-<ThemChange></ThemChange>
+                  <ThemChange></ThemChange>
                   <div>
                     <div className="dropdown dropdown-end">
                       <div tabIndex={0} role="button" className=" m-1">
@@ -131,12 +126,9 @@ const Navber = () => {
                           </NavLink>
                         </li>
                         <li>
-                          <button
-                            className="btn btn-primary mt-2"
-                            onClick={handleLogOut}
-                          >
+                          <Button className="mt-2" onClick={handleLogOut}>
                             Log Out
-                          </button>
+                          </Button>
                         </li>
                       </ul>
                     </div>
@@ -144,7 +136,6 @@ const Navber = () => {
                 </>
               ) : (
                 <div className="flex gap-5">
-                  <ThemChange></ThemChange>
                   <NavLink to="/login">
                     <button className="btn btn-primary px-6">Log In </button>
                   </NavLink>

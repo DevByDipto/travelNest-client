@@ -4,7 +4,10 @@ import useAuthSecure from "../../Hook/useAuthSecure";
 import toast from "react-hot-toast";
 
 const MyBookingRow = ({ bookedToure, index }) => {
-  const isEven = index % 2 === 0;
+ 
+  const [bookingStatus, setbookingStatus] = useState(bookedToure.status);
+  const { user, axiosSecure } = useAuthSecure();
+ const isEven = index % 2 === 0;
   const {
     _id,
     tour_name,
@@ -13,10 +16,8 @@ const MyBookingRow = ({ bookedToure, index }) => {
     departure_date,
     departure_location,
     destination,
-    spacial_note
+    special_note
   } = bookedToure;
-  const [bookingStatus, setbookingStatus] = useState(bookedToure.status);
-  const { user, axiosSecure } = useAuthSecure();
   const handleConfirmBooking = () => {
     axiosSecure
       .patch(`/booking/${_id}?email=${user.email}`, { status: "completed" })
@@ -37,7 +38,7 @@ const MyBookingRow = ({ bookedToure, index }) => {
       <td>{departure_date}</td>
       <td>{departure_location}</td>
       <td>{destination}</td>
-      <td>{spacial_note}</td>
+      <td>{special_note}</td>
       <td onClick={handleConfirmBooking}>
         {bookingStatus == "pending" ? <Button>Confirm</Button> : <span className=" bg-green-400 p-1 rounded-4xl">Confirmed</span>}
       </td>

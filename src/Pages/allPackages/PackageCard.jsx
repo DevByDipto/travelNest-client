@@ -10,7 +10,7 @@ const PackageCard = ({ singlePackage }) => {
   const { _id, bookingCount, image, guide_photo, guide_name } =
     singlePackage;
   const location = useLocation();
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
  const handleDetailsModal = () => {
     if (!user) {

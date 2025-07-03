@@ -5,6 +5,7 @@ import Loading from '../../Components/Loding'
 import { IoSearchSharp } from 'react-icons/io5';
 import axios from 'axios';
 import Button from '../../Components/common/Button';
+import toast from 'react-hot-toast';
 const AllPackages = () => {
   const {packages,setPackages,loading} = usePackages()
   console.log(packages);
@@ -18,7 +19,7 @@ const AllPackages = () => {
     const searchQuery = e.target.search.value
 // console.log(searchQuery);
 
-    axios.get(`http://localhost:3000/packages/search?query=${searchQuery}`).then(res => setPackages(res.data))
+    axios.get(`http://localhost:3000/packages/search?query=${searchQuery}`).then(res => setPackages(res.data)).catch(err=> toast.error(err.message))
   }
   return (
     <div className="bg-gray-100 pb-32 dark:bg-[#1D232A]">

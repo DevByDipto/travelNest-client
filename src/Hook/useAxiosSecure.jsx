@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React from 'react'
+import toast from 'react-hot-toast'
 const axiosSecure = axios.create({
     baseURL: 'http://localhost:3000'
 })
@@ -17,7 +18,7 @@ axiosSecure.interceptors.response.use(
     return response;
   },
   (error) => {
-    console.error( error.response?.data || error.message);
+    toast.error( error.response?.data || error.message);
     return Promise.reject(error);
   }
 );

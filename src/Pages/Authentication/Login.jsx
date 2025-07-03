@@ -45,7 +45,7 @@ const Login = () => {
   };
 
   return (
-    <div className=" flex flex-col-reverse lg:flex-row items-center justify-center min-h-screen px-6 md:px-0 gap-10 bg-gradient-to-r from-amber-500 to-amber-400">
+    <div className=" flex flex-col-reverse lg:flex-row items-center justify-center min-h-screen px-6 md:px-0 gap-10 bg-gradient-to-r from-amber-500 to-amber-400 py-5">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
         <h1 className="text-3xl font-bold text-center pt-3">Login now!</h1>
         <div className="card-body">
