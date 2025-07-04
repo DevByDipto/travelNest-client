@@ -7,7 +7,7 @@ const MyBookings = () => {
     const {user} = useAuthSecure()
 const {data: myBookedTours,loading,} = useSecureFetch(`/bookings?email=${user.email}`);
 if(loading) return <Loding></Loding>
-console.log(myBookedTours);
+// console.log(myBookedTours);
 
   return (
     <div className='container pb-32'>

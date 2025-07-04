@@ -14,7 +14,7 @@ const {user,axiosSecure} = useAuthSecure()
 const {data: selectedPackage,loading,} = useSecureFetch(`/my-packages?email=${user.email}&id=${id}`);
 const navigate = useNavigate()
   if (loading) return <Loding></Loding>;
-console.log(selectedPackage);
+// console.log(selectedPackage);
 
   const handleBookingTour=(e)=>{
  e.preventDefault();

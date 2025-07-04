@@ -30,7 +30,7 @@ const AddPackage = () => {
           });
         }
       });
-    console.log(packageInfo);
+    // console.log(packageInfo);
   };
 
   return (

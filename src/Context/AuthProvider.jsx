@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
               localStorage.setItem("token", res.data.token);
             }
           })
-          .catch(err=>console.log(err))
+          .catch(err=>toast.error(err.message))
       }
     });
     return () => unSuscribe();

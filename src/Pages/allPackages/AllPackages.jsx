@@ -8,9 +8,9 @@ import Button from '../../Components/common/Button';
 import toast from 'react-hot-toast';
 const AllPackages = () => {
   const {packages,setPackages,loading} = usePackages()
-  console.log(packages);
+  // console.log(packages);
   
-  console.log("work");
+  // console.log("work");
   
   if(loading) return <Loading></Loading>
   const handleSearch=(e)=>{

@@ -39,7 +39,7 @@ const Register = () => {
           .then(() => {
             toast.success("Registration successful");
             navigate(location.state ? location.state : "/");
-            console.log("relod is worak");
+            // console.log("relod is worak");
             window.location.reload();
             
 

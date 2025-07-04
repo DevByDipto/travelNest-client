@@ -15,7 +15,7 @@ const ManageMyPackages = () => {
   } = useSecureFetch(`/my-packages?email=${user.email}`);
   const navigate = useLocation()
   navigate.state=navigate.pathname
-  console.log(navigate);
+  // console.log(navigate);
   
   
   if (loading) return <Loding></Loding>;

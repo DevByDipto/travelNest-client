@@ -24,7 +24,7 @@ const navigate = useNavigate()
     packageInfo.price = parseFloat(packageInfo.price);
     packageInfo.bookingCount = 0;
     packageInfo.created_at = new Date().toISOString();
-    console.log(packageInfo);
+    // console.log(packageInfo);
     
  axiosSecure.put(`/tour-packages/${id}?email=${user.email}`,packageInfo)
        .then(res =>{

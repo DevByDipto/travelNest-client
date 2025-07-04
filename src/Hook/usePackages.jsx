@@ -8,7 +8,7 @@ const usePackages = () => {
   // const location = useLocation()
   const [packages, setPackages] = useState([]);
   const [loading, setLoding] = useState(true);
-console.log(import.meta.env.VITE_API_BASE_URL);
+// console.log(import.meta.env.VITE_API_BASE_URL);
 
   useEffect(() => {
         axios
