@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
       setUser(user);
       if (user?.email) {
         axios
-          .post("import.meta.env.VITE_API_BASE_URL/jwt", { email: user.email })
+          .post(`${import.meta.env.VITE_API_BASE_URL}/jwt`, { email: user.email })
           .then((res) => {
             if (res.data.token) {
               localStorage.setItem("token", res.data.token);
