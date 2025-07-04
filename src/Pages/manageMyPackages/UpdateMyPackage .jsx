@@ -6,6 +6,7 @@ import useSecureFetch from '../../Hook/useSecureFetch';
 import Loding from '../../Components/Loding';
 import useAxiosSecure from '../../Hook/useAxiosSecure';
 import Swal from 'sweetalert2';
+import Button from '../../Components/common/Button';
 
 const UpdateMyPackage  = () => {
     const {id} = useParams()
@@ -13,18 +14,6 @@ const {user,axiosSecure} = useAuthSecure()
 const {data: myPackage,loading,} = useSecureFetch(`/my-packages?email=${user.email}&id=${id}`);
 const navigate = useNavigate()
   if (loading) return <Loding></Loding>;
-
-
-
-//   const {user,axiosSecure} = useAuthSecure()
-//       const [myPackage, setMyPackage] = useState();
-// const {id} = useParams()
-
-//  useEffect(() => {
-//     axiosSecure
-//       .get(`/my-packages?email=${user.email}&id=${id}`)
-//       .then(res => setMyPackage(res.data))
-//   }, [user?.email, axiosSecure,id]);
 
  const handleUpdatePackage=(e)=>{
      e.preventDefault();
@@ -54,12 +43,22 @@ navigate('/manage-my-packages')
 //   console.log(myPackage);
   
   return (
-    <div>
-         <form onSubmit={handleUpdatePackage}>
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-        <legend className="fieldset-legend">Edit Tour Package</legend>
+    <div className="bg-gradient-to-r from-amber-500 to-amber-400 pb-32 dark:bg-[#1D232A]">
+
+    
+    <div className="container">
+       <div className="flex items-center justify-center py-10">
+        <h2 className="text-4xl font-bold rounded-2xl py-3 w-2xl text-center ">
+          Update Tour Package
+        </h2>
+        </div>
+         <form className='form lg:w-[60%] mx-auto' onSubmit={handleUpdatePackage}>
+      <fieldset className="fieldset border-none shadow-2xl bg-white dark:bg-[#1D232A] rounded-box border p-4 grid grid-cols-2">
 
         {/* Tour Name */}
+        <div>
+
+    
         <label className="label">Tour Name</label>
         <input
           type="text"
@@ -68,8 +67,12 @@ navigate('/manage-my-packages')
           className="input"
           placeholder="Enter tour name"
         />
+    </div>
 
         {/* image */}
+        <div>
+
+      
         <label className="label">Image URL</label>
         <input
           type="text"
@@ -78,8 +81,12 @@ navigate('/manage-my-packages')
           className="input"
           placeholder="Enter tour image URL"
         />
+          </div>
 
         {/* Duration */}
+        <div>
+
+        
         <label className="label">Duration</label>
         <select defaultValue={myPackage?.duration} name="duration" className="select">
           <option disabled value="">
@@ -89,8 +96,11 @@ navigate('/manage-my-packages')
           <option>2 Days 1 Nights</option>
           <option>1 Day</option>
         </select>
-
+</div>
         {/* departure_location */}
+        <div>
+
+     
         <label className="label">Departure Location</label>
         <input
           type="text"
@@ -99,8 +109,11 @@ navigate('/manage-my-packages')
           className="input"
           placeholder="Departure location"
         />
-
+   </div>
         {/* destination */}
+        <div>
+
+       
         <label className="label">Destination Location</label>
         <input
           type="text"
@@ -109,8 +122,11 @@ navigate('/manage-my-packages')
           className="input"
           placeholder="Destination location"
         />
-
+ </div>
         {/* price */}
+        <div>
+
+       
         <label className="label">Tour Package Price</label>
         <input
           type="number"
@@ -119,14 +135,20 @@ navigate('/manage-my-packages')
           className="input"
           placeholder="Enter price in BDT"
         />
-
+ </div>
         {/* departure_date */}
+        <div>
+
+       
         <label className="label">Departure Date</label>
         <label className="input">
           <input type="date" name="departure_date" defaultValue={myPackage?.departure_date}/>
         </label>
-
+ </div>
         {/* package_details */}
+        <div>
+
+    
         <label className="label">Package Details</label>
         <input
           type="text"
@@ -135,8 +157,11 @@ navigate('/manage-my-packages')
           className="input"
           placeholder="Write details about the tour"
         />
-
+    </div>
         {/* guide_name */}
+        <div>
+
+       
         <label className="label">Guide Name</label>
         <input
           type="text"
@@ -146,8 +171,11 @@ navigate('/manage-my-packages')
           placeholder="Guide name"
           readOnly
         />
-
+ </div>
         {/* guide_email */}
+        <div>
+
+        
         <label className="label">Guide Email</label>
         <input
           type="text"
@@ -157,8 +185,11 @@ navigate('/manage-my-packages')
           placeholder="Guide email"
           readOnly
         />
-
+</div>
         {/* guide_photo */}
+        <div>
+
+       
         <label className="label">Guide Photo</label>
         <input
           type="text"
@@ -168,8 +199,11 @@ navigate('/manage-my-packages')
           placeholder="Guide photo URL"
           readOnly
         />
-
+ </div>
         {/* guide_contact_no */}
+        <div>
+
+      
         <label className="label">Guide Contact No</label>
         <input
           type="text"
@@ -178,11 +212,13 @@ navigate('/manage-my-packages')
           className="input"
           placeholder="Contact number"
         />
+        
+ </div>
+ <Button className='col-span-2 mt-2'><input className="" type="submit" value="Update" /></Button>
       </fieldset>
 
-      <input className="btn btn-primary" type="submit" value="Update" />
     </form>
-        
+        </div>
          </div>
   )
 }
