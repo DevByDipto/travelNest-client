@@ -19,7 +19,7 @@ const PackageDetails = ({ singlePackage, openModal, setOpenModal }) => {
   } = singlePackage;
   return (
     <div>
-      {" "}
+  
       {openModal && (
         <button
           onClick={document.getElementById(singlePackage._id).showModal()}
