@@ -8,12 +8,12 @@ Users can also add and manage their own packages, while the system securely hand
 ---
 
 ## Live Project
-🔗 **Live Site:** [https://your-live-site-link.com](https://travel-guru-19a3e.web.app)
+🔗 **Live Site:** https://travel-guru-19a3e.web.app
 
 ---
 
 ## Server Repository
-🔗 **Server Repo:** [https://github.com/your-username/TravelNest-server](https://github.com/DevByDipto/travelNest-server)
+🔗 **Server Repo:** https://github.com/DevByDipto/travelNest-server
 
 ---
 
