@@ -75,7 +75,7 @@ function TourTypesSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {tourTypes.map(type => (
-            <div key={type.id} className="flex flex-col items-center p-6 dark:bg-[#1D232A] bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+            <div key={type.id} className="flex flex-col items-center p-6 dark:bg-[#182432] bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
               {type.icon}
               <h3 className="text-xl font-semibold text-gray-900 dark:text-[#ECF9FF] mb-1">{type.name}</h3>
               <p className="text-gray-600 dark:text-[#ECF9FF] text-sm">{type.toursCount} tours</p>
