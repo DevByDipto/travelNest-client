@@ -16,6 +16,7 @@ import MyBookings from "../Pages/booking/MyBookings";
 import About from "../Pages/about/About";
 import TermsAndConditions from "../Pages/TermsAndConditions/TermsAndConditions";
 import PrivacyPolicy from "../Pages/PrivacyPolicy/PrivacyPolicy";
+import AchievementPage from "../Pages/AchievementPage/AchievementPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -57,6 +58,9 @@ const router = createBrowserRouter([
     },
     {  path:'privacyPolicy',
       element: <PrivacyPolicy></PrivacyPolicy>
+    },
+    {  path:'achievement',
+      element: <AchievementPage></AchievementPage>
     },
 
     ]

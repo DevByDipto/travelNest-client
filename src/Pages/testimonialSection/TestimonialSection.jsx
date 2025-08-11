@@ -56,7 +56,7 @@ function TestimonialSection() {
   };
 
   return (
-    <section className="py-32 bg-white dark:bg-[#1D232A]">
+    <section className="py-16 md:py-32 bg-white dark:bg-[#1D232A]">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-[#ECF9FF] mb-4">What <span className='text-amber-500'>they say!</span></h2>
    <p className="text-gray-600 dark:text-[#ECF9FF] mb-12">Hear from our happy travelers about their amazing experiences with TravelNest.</p>

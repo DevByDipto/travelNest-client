@@ -95,6 +95,8 @@ const Navber = () => {
                   <NavLink to="/my-bookings">My Bookings</NavLink>
                   <NavLink to="/add-package">Add Package</NavLink>
                   <NavLink to="/manage-my-packages">Manage My Packages</NavLink>
+                                    <NavLink to="/achievement">Achievement</NavLink>
+
                   <p className="" onClick={handleLogOut}>
                     Log Out
                   </p>
@@ -105,6 +107,8 @@ const Navber = () => {
                   <NavLink to="/all-packages">All Packages</NavLink>
                   <NavLink to="/about-us">About Us</NavLink>
                   <NavLink to="/my-bookings">My Bookings</NavLink>
+                                    <NavLink to="/achievement">Achievement</NavLink>
+
                   <Link to="/login">
                     <p className=" ">Log In </p>
                   </Link>
@@ -132,9 +136,12 @@ const Navber = () => {
               <NavLink to="/">Home</NavLink>
               <NavLink to="/all-packages">All Packages</NavLink>
               <NavLink to="/about-us">About Us</NavLink>
+                                <NavLink to="/achievement">Achievement</NavLink>
+
               {user ? (
                 <>
                   <NavLink to="/my-bookings">My Bookings</NavLink>
+                  
                   <ThemChange></ThemChange>
                   <div>
                     <div className="dropdown dropdown-end">

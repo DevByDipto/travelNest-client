@@ -65,7 +65,7 @@ function TourTypesSection() {
   ];
 
   return (
-    <section className="bg-gray-100 dark:bg-[#1D232A] py-32">
+    <section className="py-16 md:py-32 bg-gray-100 dark:bg-[#1D232A] ">
         <div className='container'>
 
       

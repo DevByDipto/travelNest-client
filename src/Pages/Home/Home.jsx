@@ -4,6 +4,7 @@ import FeaturedPackages from '../../Components/home/FeaturedPackages'
 import WhyChooseUs from '../whychooseUs/WhyChooseUs'
 import TestimonialSection from '../TestimonialSection/TestimonialSection'
 import TourTypesSection from '../tourTypesSection/TourTypesSection'
+import LatestNews from '../latestNews/LatestNews'
 
 
 const Home = () => {
@@ -15,6 +16,9 @@ const Home = () => {
       <WhyChooseUs></WhyChooseUs>
       <TourTypesSection></TourTypesSection>
       <TestimonialSection></TestimonialSection>
+      {/* <LatestNews></LatestNews> */}
+      
+      
       </div>
   )
 }

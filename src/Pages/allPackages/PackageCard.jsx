@@ -23,7 +23,7 @@ const PackageCard = ({ singlePackage }) => {
   return (
     <div>
       {/* package card */}
-      <div className="bg-amber-50 dark:bg-[#1D232A] dark:shadow-2xl shadow-md rounded-2xl">
+      <div className="bg-amber-50 dark:bg-[#182432] dark:shadow-2xl shadow-md rounded-2xl">
         <figure>
           <img
             src={image}

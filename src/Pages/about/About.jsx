@@ -9,10 +9,10 @@ const About = () => {
       <div className="pb-12 md:pb-32 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left: Description */}
         <div>
-          <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+          <p className="text-lg dark:text-[#ECF9FF] text-gray-700 mb-4 leading-relaxed">
             Welcome to <span className="font-semibold text-amber-500">TravelNest</span>, your trusted companion for discovering beautiful destinations across Bangladesh. Whether you're looking for a beach escape, a mountain adventure, or a cultural trip — we've got the perfect package for you.
           </p>
-          <p className="text-lg text-gray-700 mb-4">
+          <p className="text-lg dark:text-[#ECF9FF] text-gray-700 mb-4">
             We work with experienced tour guides, provide top-quality accommodations, and ensure smooth bookings every time. Your journey begins here!
           </p>
         </div>
@@ -34,17 +34,17 @@ const About = () => {
         <div className="p-6 border border-amber-400 rounded-xl shadow hover:shadow-lg transition">
           <FaMapMarkedAlt className="text-4xl mx-auto text-amber-500 mb-3" />
           <h3 className="text-xl font-semibold mb-2">Multiple Destinations</h3>
-          <p className="text-gray-600">Explore the beauty of Bangladesh with over 50+ tour locations.</p>
+          <p className="text-gray-600 dark:text-[#ECF9FF]">Explore the beauty of Bangladesh with over 50+ tour locations.</p>
         </div>
         <div className="p-6 border border-amber-400 rounded-xl shadow hover:shadow-lg transition">
           <FaPlaneDeparture className="text-4xl mx-auto text-amber-500 mb-3" />
           <h3 className="text-xl font-semibold mb-2">Easy Booking</h3>
-          <p className="text-gray-600">Quick & simple booking process with real-time confirmation.</p>
+          <p className="text-gray-600 dark:text-[#ECF9FF]">Quick & simple booking process with real-time confirmation.</p>
         </div>
         <div className="p-6 border border-amber-400 rounded-xl shadow hover:shadow-lg transition">
           <FaUsers className="text-4xl mx-auto text-amber-500 mb-3" />
           <h3 className="text-xl font-semibold mb-2">Trusted Guides</h3>
-          <p className="text-gray-600">Our guides are experienced, friendly, and always ready to help.</p>
+          <p className="text-gray-600 dark:text-[#ECF9FF]">Our guides are experienced, friendly, and always ready to help.</p>
         </div>
       </div>
       </div>

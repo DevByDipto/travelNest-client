@@ -26,7 +26,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="py-32 px-4 text-center">
+    <div className="py-16 md:py-32 px-4 text-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-4">Why choose <span className="text-amber-500">TravelNest</span></h2>
       <p className="md:text-xl lg:text-lg text-gray-500 dark:text-[#ECF9FF] max-w-xl mx-auto mb-12">
         Discover the difference with our expert team and top-tier travel experiences.
