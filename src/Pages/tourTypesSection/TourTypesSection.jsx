@@ -70,7 +70,7 @@ function TourTypesSection() {
 
       
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-[#ECF9FF] mb-4">Types of tours</h2>
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-[#ECF9FF] mb-4 ">Types <span className='text-amber-500'> of tours</span></h2>
         <p className="text-gray-600 dark:text-[#ECF9FF] mb-12">Explore the tours chosen and recommended by a multitude of travelers.</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">

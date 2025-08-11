@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -25,8 +26,8 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-2">Legal</h3>
           <ul className="text-sm space-y-1">
-            <li><a href="#" className="link link-hover">Terms & Conditions</a></li>
-            <li><a href="#" className="link link-hover">Privacy Policy</a></li>
+            <li><Link  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} to="termsAndConditions" className="link link-hover">Terms & Conditions</Link></li>
+            <li><Link  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} to="privacyPolicy" className="link link-hover">Privacy Policy</Link></li>
           </ul>
         </div>
 

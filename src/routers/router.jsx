@@ -14,6 +14,8 @@ import UpdateMyPackage from "../Pages/manageMyPackages/UpdateMyPackage ";
 import AddBooking from "../Pages/booking/AddBooking";
 import MyBookings from "../Pages/booking/MyBookings";
 import About from "../Pages/about/About";
+import TermsAndConditions from "../Pages/TermsAndConditions/TermsAndConditions";
+import PrivacyPolicy from "../Pages/PrivacyPolicy/PrivacyPolicy";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -49,6 +51,12 @@ const router = createBrowserRouter([
     },
     {  path:'login',
       element: <Login></Login>
+    },
+    {  path:'termsAndConditions',
+      element: <TermsAndConditions></TermsAndConditions>
+    },
+    {  path:'privacyPolicy',
+      element: <PrivacyPolicy></PrivacyPolicy>
     },
 
     ]

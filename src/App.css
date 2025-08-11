@@ -5,10 +5,14 @@
 
 .active{
     border-bottom: 2px solid rgb(227, 154, 58);
+    width: fit-content;
 }
-
+.overlay{
+ background: #151515;
+background: radial-gradient(circle, rgba(21, 21, 21, 0.51) 0%, rgba(255, 255, 255, 1) 32%);
+}
 .container{
-    width: 1152px;
+    max-width: 1152px;
     margin: auto;
 }
 

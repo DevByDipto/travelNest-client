@@ -25,13 +25,13 @@ const AllPackages = () => {
     <div className="bg-gray-100 pb-32 dark:bg-[#1D232A]">
       <div className='container'>
       <div className='text-center pt-16 pb-4'>
-      <h2 className="text-4xl font-bold">AllPackages</h2>
-      <p className="text-lg font-medium text-gray-700 dark:text-[#ECF9FF] pt-5">Discover top-rated tour packages tailored for every traveler—adventure, <br />relaxation, and more.  Book easily and travel with confidence!</p>
+      <h2 className="text-3xl md:text-4xl font-bold">All <span className='text-amber-500'>Packages</span></h2>
+      <p className=" md:text-xl lg:text-lg font-medium text-gray-700 dark:text-[#ECF9FF] pt-5">Discover top-rated tour packages tailored for every traveler—adventure, <br />relaxation, and more.  Book easily and travel with confidence!</p>
       </div>
       <form className='mt-5 mb-15 flex gap-1 justify-center items-center' onSubmit ={handleSearch} >
         <input type="text" name='search' placeholder="searce by package name" className="input"/>
      
-      <Button><input type="submit" className='' value='search' /></Button>
+      <Button className='text-white'><input type="submit" className='' value='search' /></Button>
       </form>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>

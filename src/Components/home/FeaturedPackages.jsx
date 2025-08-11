@@ -17,8 +17,8 @@ const FeaturedPackages = () => {
   return (
     <div className="py-32 bg-gray-100 dark:bg-[#1D232A]">
       <div className="container">
-        <h2 className="text-4xl font-bold">Featured Packages</h2>
-        <p className="text-lg font-medium text-gray-700 dark:text-[#ECF9FF] my-5">
+        <h2 className="text-3xl md:text-4xl font-bold">Featured <span className="text-amber-500">Packages</span></h2>
+        <p className="md:text-xl lg:text-lg font-medium text-gray-700 dark:text-[#ECF9FF] my-5">
           Take a look at our featured travel packages, chosen for their
           popularity, affordability, and <br />
           unforgettable experiences. Whether you’re seeking nature, culture, or
@@ -26,7 +26,7 @@ const FeaturedPackages = () => {
           these tours offer something special for everyone.
         </p>
         {/* feature cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {packages?.slice(0, 6).map((singlePackage) => (
            <PackageCard key={singlePackage._id} singlePackage={singlePackage}></PackageCard>
           ))}
