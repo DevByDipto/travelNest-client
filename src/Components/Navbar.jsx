@@ -18,8 +18,8 @@ const Navber = () => {
 
   return (
     <nav className="bg-gray-100 dark:bg-[#1D232A] border-b border-gray-300">
-      <div className="navbar px-0 container  ">
-        <div className="navbar-start">
+      <div className="navbar px-0 container flex justify-between  ">
+        <div className="navbar-start lg:w-0">
           <div className="dropdown">
             <div
               tabIndex={0}
@@ -84,15 +84,16 @@ const Navber = () => {
               )}
             </ul>
           </div>
-
+{/* logo */}
           <div className="flex gap-3 items-center">
             <p className="text-primary text-2xl md:text-4xl">🌍</p>
             <h2 className="text-2xl md:text-4xl font-medium text-amber-500">
-              Travel<span className="text-black">Nest</span>
+              Travel<span className="text-black dark:text-white ">Nest</span>
             </h2>
           </div>
         </div>
-        <div className="navbar-end hidden lg:flex">
+
+        <div className="navbar-end hidden lg:flex lg:w-0 flex-1">
           {/* for leptop */}
           <ul className="menu menu-horizontal px-1">
             <div className="flex gap-5 items-center font-medium text-lg ">
