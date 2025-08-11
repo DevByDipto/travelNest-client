@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <footer className="bg-base-200 text-base-content pt-10">
-      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* Logo & Name */}
         <div>
           <h2 className="text-xl font-bold mb-2">🌍 TravelNest</h2>

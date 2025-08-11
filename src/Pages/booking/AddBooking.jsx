@@ -38,7 +38,7 @@ navigate('/my-bookings')
   }
   return (
     <div className='bg-gradient-to-r from-amber-500 to-amber-400 min-h-screen py-5'>
-      <h2 className=' text-3xl font-bold text-center pt-10'>Reserve Your Tour - TravelNest</h2>
+      <h2 className=' text-3xl font-bold text-center pt-16 md:pt-28'>Reserve Your Tour - TravelNest</h2>
    
     <div className='flex flex-col-reverse lg:flex-row items-center justify-center  px-6 md:px-0 gap-10 '>
       

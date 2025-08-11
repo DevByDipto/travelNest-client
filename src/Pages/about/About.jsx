@@ -3,10 +3,10 @@ import { FaMapMarkedAlt, FaPlaneDeparture, FaUsers } from "react-icons/fa";
 
 const About = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-center mb-8 ">About <span className="text-amber-500">TravelNest</span></h1>
+    <div className="max-w-6xl mx-auto px-4  pt-28 md:pt-32">
+      <h1 className="text-4xl font-bold text-center mb-10">About<span className="text-amber-500">TravelNest</span></h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="pb-12 md:pb-32 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left: Description */}
         <div>
           <p className="text-lg text-gray-700 mb-4 leading-relaxed">
@@ -28,7 +28,9 @@ const About = () => {
       </div>
 
       {/* Features */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 text-center">
+      <div className="pb-12 md:pb-32">
+ <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">Our <span className='text-amber-500'>Features</span></h2>
+      <div className=" grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 text-center">
         <div className="p-6 border border-amber-400 rounded-xl shadow hover:shadow-lg transition">
           <FaMapMarkedAlt className="text-4xl mx-auto text-amber-500 mb-3" />
           <h3 className="text-xl font-semibold mb-2">Multiple Destinations</h3>
@@ -45,6 +47,8 @@ const About = () => {
           <p className="text-gray-600">Our guides are experienced, friendly, and always ready to help.</p>
         </div>
       </div>
+      </div>
+      
     </div>
   );
 };

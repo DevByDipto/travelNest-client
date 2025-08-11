@@ -56,7 +56,7 @@ function TestimonialSection() {
   };
 
   return (
-    <section className="py-16 bg-white dark:bg-[#1D232A]">
+    <section className="py-32 bg-white dark:bg-[#1D232A]">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-[#ECF9FF] mb-4">What <span className='text-amber-500'>they say!</span></h2>
    <p className="text-gray-600 dark:text-[#ECF9FF] mb-12">Hear from our happy travelers about their amazing experiences with TravelNest.</p>
@@ -103,7 +103,7 @@ function TestimonialSection() {
             </div>
             <button
               onClick={nextTestimonial}
-              className="p-3 rounded-full bg-gray-200 dark:bg-[#1D232A] hover:bg-gray-300 hover:dark:bg-[#1D232A] transition duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="p-3 rounded-full bg-gray-200 dark:bg-[#1D232A] hover:bg-gray-300  transition duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
             >
               <svg className="w-6 h-6 text-amber-500  dark:text-[#ECF9FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>

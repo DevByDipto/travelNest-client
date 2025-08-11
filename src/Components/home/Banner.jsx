@@ -13,7 +13,7 @@ const Banner = () => {
     >
       <div className="relative bg-[#1d1b1b23]  w-full h-full z-0"></div>
 
-      <div className="text-white text-center z-10">
+      <div className="text-white text-center z-10 mt-20">
         <div className="max-w-md">
           <h1 className="mb-5 text-4xl lg:text-5xl font-bold">
             Explore the World <span className="text-amber-500">with TravelNest</span>

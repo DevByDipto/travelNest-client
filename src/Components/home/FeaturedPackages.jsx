@@ -15,7 +15,7 @@ const FeaturedPackages = () => {
  
   
   return (
-    <div className="py-32 bg-gray-100 dark:bg-[#1D232A]">
+    <div className="py-32 bg-gray-100 dark:bg-[#1D232A] md:px-5">
       <div className="container">
         <h2 className="text-3xl md:text-4xl font-bold">Featured <span className="text-amber-500">Packages</span></h2>
         <p className="md:text-xl lg:text-lg font-medium text-gray-700 dark:text-[#ECF9FF] my-5">

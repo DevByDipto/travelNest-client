@@ -26,7 +26,7 @@ const ManageMyPackages = () => {
 
     
     <div className="container pb-32">
-      <h2 className="text-4xl font-bold rounded-full inline-block py-10">Manage My Packages</h2>
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold rounded-full inline-block pt-24 pb-6 md:pb-10 md:pt-32 ">Manage  <span className="text-amber-500">My Packages</span></h2>
 
       <div className="overflow-x-auto">
         <table className="table border border-gray-100 dark:border-[#242a31]">

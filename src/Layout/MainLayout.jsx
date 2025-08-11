@@ -10,7 +10,10 @@ const MainLayout = () => {
   return (
     <div>
       <Navber></Navber>
+      <div className="min-h-[700px]">
       <Outlet></Outlet>
+
+      </div>
       <Footer></Footer>
     </div>
   );

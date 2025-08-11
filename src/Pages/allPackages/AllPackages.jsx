@@ -24,7 +24,7 @@ const AllPackages = () => {
   return (
     <div className="bg-gray-100 pb-32 dark:bg-[#1D232A]">
       <div className='container'>
-      <div className='text-center pt-16 pb-4'>
+      <div className='text-center pt-28 md:pt-36 pb-4'>
       <h2 className="text-3xl md:text-4xl font-bold">All <span className='text-amber-500'>Packages</span></h2>
       <p className=" md:text-xl lg:text-lg font-medium text-gray-700 dark:text-[#ECF9FF] pt-5">Discover top-rated tour packages tailored for every traveler—adventure, <br />relaxation, and more.  Book easily and travel with confidence!</p>
       </div>

@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { NavLink, useNavigate } from "react-router";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router";
 import { FaUserTie } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { AuthContext } from "../Context/AuthContext";
@@ -8,6 +8,35 @@ import ThemChange from "./ThemeChange";
 import Button from "./common/Button";
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
+ const [show, setShow] = useState(true); // Navbar visible/hidden state
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY) {
+        // Scroll Down
+        // console.log(window.scrollY);
+        
+        setShow(false);
+      } else {
+        // Scroll Up
+        setShow(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+// console.log(window.addEventListener("scroll",controlNavbar));
+
+
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
 
   // const navigate = useNavigate();
   // console.log(user?.photoURL);
@@ -17,8 +46,11 @@ const Navber = () => {
   };
 
   return (
-    <nav className="bg-gray-100 dark:bg-[#1D232A] border-b border-gray-300">
-      <div className="navbar container flex justify-between pl-0  md:px-10">
+    <nav  className={`fixed top-0 left-0 right-0 bg-gray-100 dark:bg-[#1D232A] shadow-md transition-transform duration-300 z-50 ${
+        show ? "translate-y-0" : "-translate-y-full"
+      }`}>
+         {/* className="bg-gray-100 dark:bg-[#1D232A] border-b border-gray-300  md:px-5" */}
+      <div className="navbar container flex justify-between pl-0 ">
         <div className="navbar-start  lg:w-0">
           <div className="dropdown">
             <div
@@ -63,9 +95,9 @@ const Navber = () => {
                   <NavLink to="/my-bookings">My Bookings</NavLink>
                   <NavLink to="/add-package">Add Package</NavLink>
                   <NavLink to="/manage-my-packages">Manage My Packages</NavLink>
-                  <button className="btn border py-1" onClick={handleLogOut}>
+                  <p className="" onClick={handleLogOut}>
                     Log Out
-                  </button>
+                  </p>
                 </>
               ) : (
                 <>
@@ -73,13 +105,13 @@ const Navber = () => {
                   <NavLink to="/all-packages">All Packages</NavLink>
                   <NavLink to="/about-us">About Us</NavLink>
                   <NavLink to="/my-bookings">My Bookings</NavLink>
-                  <ThemChange></ThemChange>
-                  <NavLink to="/login">
-                    <button className="btn border py-1">Log In </button>
-                  </NavLink>
-                  <NavLink to="/register">
-                    <button className="btn border py-1">Registration</button>
-                  </NavLink>
+                  <Link to="/login">
+                    <p className=" ">Log In </p>
+                  </Link>
+                  <Link to="/register">
+                    <p className=" ">Registration</p>
+                  </Link>
+                                    <ThemChange></ThemChange>
                 </>
               )}
             </ul>
@@ -137,12 +169,12 @@ const Navber = () => {
                 </>
               ) : (
                 <div className="flex gap-5">
-                  <NavLink to="/login">
+                  <Link to="/login">
                     <Button className="px-6">Log In </Button>
-                  </NavLink>
-                  <NavLink to="/register">
+                  </Link>
+                  <Link to="/register">
                     <Button className="px-6">Registration</Button>
-                  </NavLink>
+                  </Link>
                 </div>
               )}
             </div>

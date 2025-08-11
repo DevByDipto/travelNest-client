@@ -34,9 +34,9 @@ const AddPackage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-amber-500 to-amber-400 pb-32 dark:bg-[#1D232A]">
+    <div className="bg-gradient-to-r from-amber-500 to-amber-400 pb-16 md:pb-32 dark:bg-[#1D232A]">
       <div className="container">
-        <div className="flex items-center justify-center py-10">
+        <div className="flex items-center justify-center pb-0 md:pb-8 pt-20 md:pt-32">
         <h2 className="text-4xl font-bold rounded-2xl py-3 w-2xl text-center ">
           Add Package
         </h2>

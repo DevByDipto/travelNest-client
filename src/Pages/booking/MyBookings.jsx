@@ -10,10 +10,10 @@ if(loading) return <Loding></Loding>
 // console.log(myBookedTours);
 
   return (
-    <div className='container pb-32'>
+    <div className='container py-16 md:pb-32 md:pt-24'>
       <div className=' pt-16 pb-10  '>
-      <h2  className="text-4xl font-bold rounded-full inline-block">My Bookings</h2>
-       <p className="text-lg font-medium text-gray-700 dark:text-[#ECF9FF] pt-5">View all your tour bookings in one place. You can track booking status, check package details,<br /> and manage your upcoming trips from here.</p>
+      <h2  className=" text-3xl md:text-4xl font-bold rounded-full inline-block">My <span className='text-amber-500'>Bookings</span></h2>
+       <p className=" md:text-xl lg:text-lg font-medium text-gray-700 dark:text-[#ECF9FF] pt-5">View all your tour bookings in one place. You can track booking status, check package details,<br /> and manage your upcoming trips from here.</p>
    </div>
       <div className="overflow-x-auto">
   <table className="table border border-gray-100 dark:border-[#242a31]">
