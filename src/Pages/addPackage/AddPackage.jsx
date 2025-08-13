@@ -4,6 +4,8 @@ import useAuthSecure from "../../Hook/useAuthSecure";
 import Lottie from "lottie-react";
 import addPackageAnimation from "../../assets/addPackageAnimation.json";
 import Button from "../../Components/common/Button";
+import {motion} from "framer-motion"
+
 const AddPackage = () => {
   const { user, axiosSecure } = useAuthSecure();
 
@@ -37,9 +39,18 @@ const AddPackage = () => {
     <div className="bg-gradient-to-r from-amber-500 to-amber-400 pb-16 md:pb-32 dark:bg-[#1D232A]">
       <div className="container">
         <div className="flex items-center justify-center pb-0 md:pb-8 pt-20 md:pt-32">
-        <h2 className="text-4xl font-bold rounded-2xl py-3 w-2xl text-center ">
-          Add Package
-        </h2>
+
+        <motion.h3
+         initial={{ y: -50, opacity: 0 }} // শুরুতে উপরে + transparent
+      whileInView={{ y: 0, opacity: 1 }}    // নিচে এসে visible হবে
+      transition={{
+        duration: 1,                   // সময় লাগবে
+        ease: "easeIn"
+         }}
+         viewport={{once: true}}
+        className="text-4xl font-bold rounded-2xl py-3 w-2xl text-black text-center">
+          Add <span className="text-white">Package</span>
+        </motion.h3>
         </div>
         <div className="flex flex-col-reverse lg:flex-row">
           <form className="form lg:w-[60%]" onSubmit={handleAddPackage}>
@@ -186,7 +197,7 @@ const AddPackage = () => {
           placeholder="Contact number"
         />
                </div>
-<Button className='col-span-2 mt-3'> <input className="" type="submit" value="submit" /> </Button>
+<Button scale={1.03} className='col-span-2 mt-3'> <input className="" type="submit" value="submit" /> </Button>
             </fieldset>
            
           </form>

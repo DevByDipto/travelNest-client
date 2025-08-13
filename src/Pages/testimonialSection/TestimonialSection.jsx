@@ -1,4 +1,7 @@
 import React from 'react';
+import AnimatedHeading from '../../Components/common/AnimatedHeading';
+import AnimatedSubHeading from '../../Components/common/AnimatedSubHeading';
+import CardFadeInUpAnimation from '../../Components/common/CardFadeInUpAnimation';
 
 function TestimonialSection() {
   // Real-like data for testimonials
@@ -58,12 +61,13 @@ function TestimonialSection() {
   return (
     <section className="py-16 md:py-32 bg-white dark:bg-[#1D232A]">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-[#ECF9FF] mb-4">What <span className='text-amber-500'>they say!</span></h2>
-   <p className="text-gray-600 dark:text-[#ECF9FF] mb-12">Hear from our happy travelers about their amazing experiences with TravelNest.</p>
-
-        <div className="relative max-w-3xl mx-auto">
+        <AnimatedHeading highlightText='What' normalText=' they say!'/>
+        <AnimatedSubHeading text='Hear from our happy travelers about their amazing experiences with TravelNest.'/>
+        
+<CardFadeInUpAnimation index={1}>
+<div className="relative max-w-3xl mx-auto">
           {/* Testimonial Content */}
-          <div className="bg-white dark:bg-[#1D232A] p-8 rounded-xl shadow-lg border border-gray-200">
+          <div className="bg-white dark:bg-[#182432] p-8 rounded-xl shadow-lg border border-gray-200">
             <p className="text-lg text-gray-700 dark:text-[#ECF9FF] mb-8 leading-relaxed">
               {testimonials[currentTestimonialIndex].text}
             </p>
@@ -78,8 +82,10 @@ function TestimonialSection() {
               <p className="text-amber-600 text-sm">{testimonials[currentTestimonialIndex].title}</p>
             </div>
           </div>
-
-          {/* Navigation Arrows */}
+        </div>
+</CardFadeInUpAnimation>
+        
+         {/* Navigation Arrows */}
           <div className="flex justify-center items-center mt-8 space-x-4">
             <button
               onClick={prevTestimonial}
@@ -110,7 +116,6 @@ function TestimonialSection() {
               </svg>
             </button>
           </div>
-        </div>
       </div>
     </section>
   );

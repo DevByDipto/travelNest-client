@@ -7,6 +7,12 @@ import { AuthContext } from "../../Context/AuthContext";
 import Button from "../../Components/common/Button";
 import Lottie from "lottie-react";
 import logingAnimation from '../../assets/loginAnimation2.json'
+import SlideInLeftToRight from "../../Components/common/SlideInLeftToRight";
+import SlideInRightToLeft from "../../Components/common/SlideInRightToLeft";
+import ZoomInDown from "../../Components/common/ZoomInDown";
+import CardFadeInUpAnimation from "../../Components/common/CardFadeInUpAnimation";
+import { motion} from "framer-motion";
+
 const Login = () => {
   const { login, forgatePass } = useContext(AuthContext);
   const emailRef = useRef();
@@ -48,8 +54,18 @@ const Login = () => {
   };
 
   return (
-    <div className=" flex flex-col-reverse lg:flex-row items-center justify-center min-h-screen px-6 md:px-0 gap-10 bg-gradient-to-r from-amber-500 to-amber-400 py-5">
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
+    <div className="min-h-[700px] flex flex-col-reverse lg:flex-row items-center justify-center  px-6 md:px-0 gap-10 bg-gradient-to-r from-amber-500 to-amber-400  ">
+     
+ <motion.div 
+  initial={{ y:  50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        duration:  0.9,
+        delay: 0.3, // index এর মাধ্যমে stagger effect
+        // ease: "easeOut"
+      }}
+ 
+ className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
         <h1 className="text-3xl font-bold text-center pt-3">Login now!</h1>
         <div className="card-body">
           <form className="form" onSubmit={handleLogin}>
@@ -90,9 +106,13 @@ const Login = () => {
             </p>
           </form>
         </div>
-             </div>
+             </motion.div>
+    
+     
               {/* lotti animation */}
+              <SlideInRightToLeft>
         <Lottie animationData={logingAnimation} loop={true} />
+              </SlideInRightToLeft>
     </div>
   );
 };

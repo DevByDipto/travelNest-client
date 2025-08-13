@@ -3,8 +3,9 @@ import Button from "../../Components/common/Button";
 import useAuth from "../../Hook/useAuth";
 import { Navigate, NavLink, useLocation, useNavigate } from "react-router";
 import PackageDetails from "../../Components/PackageDetails";
+import { motion } from "framer-motion";
 
-const PackageCard = ({ singlePackage }) => {
+const PackageCard = ({ singlePackage,cardVariants }) => {
   const { user } = useAuth();
   const [openModal, setOpenModal] = useState(false);
   const { _id, bookingCount, image, guide_photo, guide_name } =
@@ -21,7 +22,7 @@ const PackageCard = ({ singlePackage }) => {
   };
 
   return (
-    <div>
+    <motion.div variants={cardVariants}>
       {/* package card */}
       <div className="bg-amber-50 dark:bg-[#182432] dark:shadow-2xl shadow-md rounded-2xl">
         <figure>
@@ -59,7 +60,7 @@ const PackageCard = ({ singlePackage }) => {
       </div>
       {/*selected package modal */}
      <PackageDetails singlePackage={singlePackage} openModal={openModal} setOpenModal={setOpenModal}></PackageDetails>
-    </div>
+    </motion.div>
   );
 };
 

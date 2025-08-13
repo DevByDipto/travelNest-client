@@ -35,10 +35,10 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-2">Follow Us</h3>
           <div className="flex gap-4 text-xl">
-            <a href="#"><FaFacebookF className="hover:text-blue-600 transition" /></a>
-            <a href="#"><FaTwitter className="hover:text-sky-400 transition" /></a>
-            <a href="#"><FaInstagram className="hover:text-pink-500 transition" /></a>
-            <a href="#"><FaYoutube className="hover:text-red-600 transition" /></a>
+            <a href="https://www.facebook.com/dipto.ghosh.129794"><FaFacebookF className="hover:text-blue-600 transition" /></a>
+            <a href="https://x.com/"><FaTwitter className="hover:text-sky-400 transition" /></a>
+            <a href="https://www.instagram.com/"><FaInstagram className="hover:text-pink-500 transition" /></a>
+            <a href="https://www.youtube.com/"><FaYoutube className="hover:text-red-600 transition" /></a>
           </div>
         </div>
       </div>

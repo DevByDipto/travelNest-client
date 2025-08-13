@@ -3,9 +3,9 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-8 md:p-12">
+    <div className=" bg-gray-50 dark:bg-[#1D232A] text-gray-900 dark:text-gray-100">
+      <div className="container mx-auto px-4 pb-16 pt-28 md:pb-32 md:pt-44">
+        <div className="max-w-4xl mx-auto bg-white dark:bg-[#182432] shadow-lg rounded-2xl p-8 md:p-12">
           <h1 className="text-2xl md:text-3xl font-semibold mb-4">Privacy Policy</h1>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             We respect your privacy. This policy explains what information we collect and how we use it.
@@ -54,7 +54,7 @@ const PrivacyPolicy = () => {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 

@@ -6,12 +6,92 @@ import { AuthContext } from "../Context/AuthContext";
 import Loding from "./Loding";
 import ThemChange from "./ThemeChange";
 import Button from "./common/Button";
+import { motion } from "framer-motion";
 const Navber = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut,loding } = useContext(AuthContext);
  const [show, setShow] = useState(true); // Navbar visible/hidden state
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const controlNavbar = () => {
+  // if(loding){
+  //   return <p>loading...</p>
+  // }
+
+ 
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+// console.log(window.addEventListener("scroll",controlNavbar));
+
+
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
+
+  // const navigate = useNavigate();
+  // console.log(user?.photoURL);
+  const handleLogOut = () => {
+    logOut();
+    toast.success("Logout successfull");
+  };
+
+
+let userDependedNavItems
+  if(user){
+    userDependedNavItems = <>
+                  <NavLink to="/my-bookings">My Bookings</NavLink>
+                  
+                  <ThemChange></ThemChange>
+                  <div>
+                    <div className="dropdown dropdown-end">
+                      <div tabIndex={0} role="button" className=" ">
+
+                      <div className="relative top-[2px] left-0">
+ <img
+                          className="h-8 w-8 rounded-full"
+                          src={user?.photoURL}
+                          alt=""
+                        />
+                      </div>
+                       
+                      </div>
+                      <ul
+                        tabIndex={0}
+                        className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+                      >
+                        <li>
+                          <NavLink to="/add-package">Add Package</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/manage-my-packages">
+                            Manage My Packages
+                          </NavLink>
+                        </li>
+                        <li>
+                          <Button className="mt-2" onClick={handleLogOut}>
+                            Log Out
+                          </Button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </>
+  }else{
+userDependedNavItems = <div className="flex gap-5">
+                  <Link to="/login">
+                    <Button className="px-6">Log In </Button>
+                  </Link>
+                  <Link to="/register">
+                    <Button className="px-6">Registration</Button>
+                  </Link>
+                </div>
+  }
+
+
+   const controlNavbar = () => {
     if (typeof window !== "undefined") {
       if (window.scrollY > lastScrollY) {
         // Scroll Down
@@ -26,31 +106,22 @@ const Navber = () => {
     }
   };
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlNavbar);
-// console.log(window.addEventListener("scroll",controlNavbar));
-
-
-      return () => {
-        window.removeEventListener("scroll", controlNavbar);
-      };
-    }
-  }, [lastScrollY]);
-
-  // const navigate = useNavigate();
-  // console.log(user?.photoURL);
-  const handleLogOut = () => {
-    logOut();
-    toast.success("Logout successfull");
-  };
-
   return (
-    <nav  className={`fixed top-0 left-0 right-0 bg-gray-100 dark:bg-[#1D232A] shadow-md transition-transform duration-300 z-50 ${
+    <nav
+        className={`fixed top-0 left-0 right-0 bg-gray-100 dark:bg-[#1D232A] shadow-md transition-transform duration-300 z-50 ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}>
          {/* className="bg-gray-100 dark:bg-[#1D232A] border-b border-gray-300  md:px-5" */}
-      <div className="navbar container flex justify-between pl-0 ">
+      <motion.div
+      initial={{ y: -100, opacity: 0 }} // শুরুতে উপরে + transparent
+      animate={{ y: 0, opacity: 1 }}    // নিচে এসে visible হবে
+      transition={{
+        duration: 1.2,                   // সময় লাগবে
+        ease: "easeIn"
+         }}
+               viewport={{ once: true }}
+
+      className="navbar container flex justify-between pl-0 ">
         <div className="navbar-start  lg:w-0">
           <div className="dropdown">
             <div
@@ -137,57 +208,16 @@ const Navber = () => {
               <NavLink to="/all-packages">All Packages</NavLink>
               <NavLink to="/about-us">About Us</NavLink>
                                 <NavLink to="/achievement">Achievement</NavLink>
-
-              {user ? (
-                <>
-                  <NavLink to="/my-bookings">My Bookings</NavLink>
-                  
-                  <ThemChange></ThemChange>
-                  <div>
-                    <div className="dropdown dropdown-end">
-                      <div tabIndex={0} role="button" className=" m-1">
-                        {" "}
-                        <img
-                          className="h-10 w-10 rounded-full"
-                          src={user?.photoURL}
-                          alt=""
-                        />
-                      </div>
-                      <ul
-                        tabIndex={0}
-                        className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
-                      >
-                        <li>
-                          <NavLink to="/add-package">Add Package</NavLink>
-                        </li>
-                        <li>
-                          <NavLink to="/manage-my-packages">
-                            Manage My Packages
-                          </NavLink>
-                        </li>
-                        <li>
-                          <Button className="mt-2" onClick={handleLogOut}>
-                            Log Out
-                          </Button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </>
+{userDependedNavItems}
+              {/* {user ? (
+               
               ) : (
-                <div className="flex gap-5">
-                  <Link to="/login">
-                    <Button className="px-6">Log In </Button>
-                  </Link>
-                  <Link to="/register">
-                    <Button className="px-6">Registration</Button>
-                  </Link>
-                </div>
-              )}
+                
+              )} */}
             </div>
           </ul>
         </div>
-      </div>
+      </motion.div>
     </nav>
   );
 };

@@ -6,6 +6,7 @@ import { AuthContext } from "../../Context/AuthContext";
 import Button from "../../Components/common/Button";
 import sugnUpAnimation from '../../assets/signUpAnimation2.json'
 import Lottie from "lottie-react";
+import SlideInLeftToRight from "../../Components/common/SlideInLeftToRight";
 const Register = () => {
   const [error, setError] = useState("");
 
@@ -54,8 +55,9 @@ const Register = () => {
   };
 
   return (
-    <div className=" flex flex-col-reverse lg:flex-row  items-center justify-center min-h-screen px-6 md:px-0 bg-gradient-to-r from-amber-500 to-amber-400 py-5">
-      <div className="card m-0 bg-base-100 w-full max-w-sm shrink-0 shadow-2xl  mt-[5vh] pt-3">
+    <div className=" flex flex-col-reverse lg:flex-row  items-center justify-center min-h-[700px] px-6 md:px-0 bg-gradient-to-r from-amber-500 to-amber-400 py-5">
+      <SlideInLeftToRight>
+ <div className="card m-0 bg-base-100 w-full max-w-sm shrink-0 shadow-2xl   pt-3">
         <h1 className="text-3xl font-bold text-center">Register now!</h1>
 
         <div className="card-body">
@@ -113,6 +115,8 @@ const Register = () => {
           </form>
         </div>
       </div>
+      </SlideInLeftToRight>
+     
          {/* lotti animation */}
         <Lottie className="" animationData={sugnUpAnimation} loop={true} />
     </div>

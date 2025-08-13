@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../common/Button";
 import { NavLink } from "react-router";
-
+import "aos/dist/aos.css";
+import Aos from "aos";
+import "animate.css";
+import { motion } from "framer-motion";
 const Banner = () => {
+  useEffect(() => {
+    Aos.init({duration: 1000});
+  }, []);
   return (
-    <div
+    <motion.div
+     initial={{ scale: 1.2 }} // শুরুতে বড়
+      animate={{ scale: 1 }} // শেষে normal হবে
+      transition={{
+        duration: 1.7, // কত সময় নেবে
+        ease: "easeOut", // smooth effect
+      }}
+            viewport={{ once: true }}
+
       className="hero min-h-[600px]"
       style={{
         backgroundImage:
@@ -14,24 +28,34 @@ const Banner = () => {
       <div className="relative bg-[#1d1b1b23]  w-full h-full z-0"></div>
 
       <div className="text-white text-center z-10 mt-20">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-4xl lg:text-5xl font-bold">
-            Explore the World <span className="text-amber-500">with TravelNest</span>
+        <div className="max-w-lg ">
+          <h1  
+  style={{
+    animationDuration: "1s",
+    animationTimingFunction: "ease-out"
+  }} className="animate__animated animate__zoomIn mb-5 text-4xl lg:text-5xl font-bold">
+            Explore the World{" "}
+            <span className="text-amber-500">with TravelNest</span>
           </h1>
-          <p className="mb-5 p-5 md:p-0 md:text-xl lg:text-lg">
-            Discover unforgettable journeys tailored just for you. From the
-            serene hills of Sajek to the vibrant beaches of Cox’s Bazar —
-            TravelNest brings you the most exciting tour packages with expert
-            guides, comfortable plans, and unforgettable memories.
-          </p>
-          <NavLink to="/all-packages">
-            <Button className="border-none shadow-none text-white transition duration-300">
-              Explore All Packages
-            </Button>
-          </NavLink>
+          <div data-aos="fade-up" data-aos-duration="7000">
+            <p className="mb-5 p-5 md:p-0 md:text-xl lg:text-lg">
+              Discover unforgettable journeys tailored just for you. From the
+              serene hills of Sajek to the vibrant beaches of Cox’s Bazar —
+              TravelNest brings you the most exciting tour packages with expert
+              guides, comfortable plans, and unforgettable memories.
+            </p>
+            <NavLink to="/all-packages">
+            
+     <Button className="border-none shadow-none text-white transition duration-300">
+                Explore All Packages
+              </Button>
+
+              
+            </NavLink>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

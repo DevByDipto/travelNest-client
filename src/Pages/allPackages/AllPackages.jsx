@@ -1,45 +1,102 @@
-import React from 'react'
-import usePackages from '../../Hook/usePackages'
-import PackageCard from './PackageCard';
-import Loading from '../../Components/Loding'
-import { IoSearchSharp } from 'react-icons/io5';
-import axios from 'axios';
-import Button from '../../Components/common/Button';
-import toast from 'react-hot-toast';
+import React from "react";
+import usePackages from "../../Hook/usePackages";
+import PackageCard from "./PackageCard";
+import Loading from "../../Components/Loding";
+import { IoSearchSharp } from "react-icons/io5";
+import axios from "axios";
+import Button from "../../Components/common/Button";
+import toast from "react-hot-toast";
+import AnimatedHeading from "../../Components/common/AnimatedHeading";
+import AnimatedSubHeading from "../../Components/common/AnimatedSubHeading";
+import ZoomInDown from "../../Components/common/ZoomInDown";
+import CardFadeInUpAnimation from "../../Components/common/CardFadeInUpAnimation";
 const AllPackages = () => {
-  const {packages,setPackages,loading} = usePackages()
+  const { packages, setPackages, loading } = usePackages();
   // console.log(packages);
-  
-  // console.log("work");
-  
-  if(loading) return <Loading></Loading>
-  const handleSearch=(e)=>{
-    e.preventDefault()
-    
-    const searchQuery = e.target.search.value
-// console.log(searchQuery);
 
-    axios.get(`${import.meta.env.VITE_API_BASE_URL}/packages/search?query=${searchQuery}`).then(res => setPackages(res.data)).catch(err=> toast.error(err.message))
-  }
+  // console.log("work");
+
+  if (loading) return <Loading></Loading>;
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    const searchQuery = e.target.search.value;
+    // console.log(searchQuery);
+
+    axios
+      .get(
+        `${
+          import.meta.env.VITE_API_BASE_URL
+        }/packages/search?query=${searchQuery}`
+      )
+      .then((res) => setPackages(res.data))
+      .catch((err) => toast.error(err.message));
+  };
   return (
     <div className="bg-gray-100 pb-32 dark:bg-[#1D232A]">
-      <div className='container'>
-      <div className='text-center pt-28 md:pt-36 pb-4'>
-      <h2 className="text-3xl md:text-4xl font-bold">All <span className='text-amber-500'>Packages</span></h2>
-      <p className=" md:text-xl lg:text-lg font-medium text-gray-700 dark:text-[#ECF9FF] pt-5">Discover top-rated tour packages tailored for every traveler—adventure, <br />relaxation, and more.  Book easily and travel with confidence!</p>
-      </div>
-      <form className='mt-5 mb-15 flex gap-1 justify-center items-center' onSubmit ={handleSearch} >
-        <input type="text" name='search' placeholder="searce by package name" className="input"/>
-     
-      <Button className='text-white'><input type="submit" className='' value='search' /></Button>
-      </form>
+      <div className="container">
+        <div className="text-center pt-28 md:pt-36">
+          {/* <AnimatedHeading normalText='All ' highlightText='Packages'/> */}
+          {/* <AnimatedSubHeading className='mb-0' text='Discover top-rated tour packages tailored for every traveler-adventure, relaxation, and more.  Book easily and travel with confidence!'/> */}
+          <ZoomInDown
+            className="text-3xl md:text-4xl font-bold"
+            normalText="All"
+            highlightText="Packages"
+          />
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-{packages?.map((singlePackage)=><PackageCard key={singlePackage._id} singlePackage={singlePackage}></PackageCard>)}
+          <CardFadeInUpAnimation>
+            <p className=" md:text-xl lg:text-lg font-medium text-gray-700 dark:text-[#ECF9FF] pt-5">
+              Discover top-rated tour packages tailored for every
+              traveler—adventure, <br />
+              relaxation, and more. Book easily and travel with confidence!
+            </p>
+          </CardFadeInUpAnimation>
+         
+        </div>
+        <CardFadeInUpAnimation index={2}>
+<form
+          className="my-4 md:my-6 lg:my-8 flex gap-1 justify-center items-center"
+          onSubmit={handleSearch}
+        >
+          <input
+            type="text"
+            name="search"
+            placeholder="searce by package name"
+            className="input"
+          />
+
+          <Button className="text-white">
+            <input type="submit" className="" value="search" />
+          </Button>
+        </form>
+        </CardFadeInUpAnimation>
+        
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {packages?.slice(0,3).map((singlePackage,i) => (
+            <CardFadeInUpAnimation   key={singlePackage._id} index={i+2}>
+  <PackageCard
+            
+              singlePackage={singlePackage}
+            ></PackageCard>
+            </CardFadeInUpAnimation>
+          
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
+          {packages?.slice(3).map((singlePackage,i) => (
+            <CardFadeInUpAnimation  key={singlePackage._id} index={i}>
+  <PackageCard
+            
+              singlePackage={singlePackage}
+            ></PackageCard>
+            </CardFadeInUpAnimation>
+          
+          ))}
+        </div>
       </div>
     </div>
-      </div>
-  )
-}
+  );
+};
 
-export default AllPackages
+export default AllPackages;
